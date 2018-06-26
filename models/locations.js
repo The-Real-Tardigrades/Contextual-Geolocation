@@ -1,8 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
-    var Locations = sequelize.define("Locations", {
+    var Location = sequelize.define("Location", {
       locationName: {
         type: DataTypes.STRING(100),
-        allowNull: false,
+        allowNull: true,
         validate: {
           len: [1]
         }
@@ -10,15 +10,15 @@ module.exports = function(sequelize, DataTypes) {
       latitude: {
         type: DataTypes.DECIMAL(18,14),
         allowNull: false
-    },
-    longitude: {
+      },
+      longitude: {
         type: DataTypes.DECIMAL(18,14),
         allowNull: false
-    },
-    radius: {
+      },
+      radius: {
         type: DataTypes.INTEGER,
         allowNull: false
-    }
+      }
     });
 
     Locations.associate = function(models) {
@@ -28,5 +28,5 @@ module.exports = function(sequelize, DataTypes) {
           onDelete: "cascade"
         });
       };
-    return Locations;
+    return Location;
 };
