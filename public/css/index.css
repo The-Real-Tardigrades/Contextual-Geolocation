@@ -1,0 +1,26 @@
+.nav-wrapper {
+    background-color: rgb(69, 126, 248);
+}
+
+.intro {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.waves-effect {
+    background-color: rgb(69, 126, 248);
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    background-image: url("css/images/maps.jpg");
+    height: 100%; 
+    background-position: bottom center;  
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-attachment: fixed;
+}
