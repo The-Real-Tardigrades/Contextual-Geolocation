@@ -17,10 +17,10 @@ body, html {
 }
 
 .bg {
-    background-image: url("css/images/maps.jpg");
+    background-image: url("../images/maps.jpg");
     height: 100%; 
     background-position: bottom center;  
     background-repeat: no-repeat;
-    background-size: 70%;
+    background-size: 90%;
     background-attachment: fixed;
 }
