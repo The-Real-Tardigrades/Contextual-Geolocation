@@ -4,27 +4,27 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Add a Person</title>
+    <title>My People</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="addPerson.css">
+    <link rel="stylesheet" type="text/css" href="css/myPeople.css">
     <script src="main.js"></script>
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Add People</a>
+            <a href="#!" class="brand-logo">My People</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
             </a>
             <ul class="right hide-on-med-and-down">
                 <li>
-                    <a href="locations.html">My Locations</a>
+                    <a href="myLocations.html">My Locations</a>
                 </li>
                 <li>
-                    <a href="people.html">My People</a>
+                    <a href="myPeople.html">My People</a>
                 </li>
             </ul>
         </div>
@@ -32,14 +32,70 @@
 
     <ul class="sidenav" id="mobile-demo">
         <li>
-            <a href="locations.html">My Locations</a>
+            <a href="myLocations.html">My Locations</a>
         </li>
         <li>
-            <a href="people.html">My People</a>
+            <a href="myPeople.html">My People</a>
         </li>
     </ul>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix">First Name</label>
+                </div>
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix">Last Name</label>
+                </div>
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="icon_telephone" type="tel" class="validate">
+                    <label for="icon_telephone">Nickname</label>
+                </div>
+                <div class="row">
+                    <div class="input-field col s4">
+                        <i class="material-icons prefix">assignment_ind</i>
+                        <input id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">Job Role</label>
+                    </div>
+                    <div class="input-field col s4">
+                            <i class="material-icons prefix">description</i>
+                            <textarea id="textarea1" class="materialize-textarea"></textarea>
+                            <label for="textarea1">Notes</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <!-- Dropdown Trigger -->
+  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Associate Location</a>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><a href="#!">three</a></li>
+    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+  </ul>
+                    </div>
+                </div>
+                    
+        </form>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+          </button>
+
+          <button class="btn waves-effect waves-light" type="submit" name="action">Discard
+            <i class="material-icons right">send</i>
+          </button>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 </body>
 
 </html>
