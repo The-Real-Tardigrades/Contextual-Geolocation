@@ -22,12 +22,13 @@ function initMap() {
             infoWindow.setContent('You are here');
             infoWindow.open(map);
             map.setCenter(pos);
+            map.setZoom(15);
             $.get("/api/locations", function (data) {
                 for (var i = 0; i < data.length; i++) {
-                    var latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
-                    console.log(checkDistance(pos, latLng));
-                }
-            });
+                var latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
+                console.log(checkDistance(pos, latLng));
+        }
+    });
         }, function () {
             handleLocationError(true, infoWindow, map.getCenter());
         });
@@ -35,7 +36,7 @@ function initMap() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
-
+    
 }
 
 function getLocations() {
@@ -70,4 +71,3 @@ function checkDistance(userLocation, markerLocation) {
     }
     return false;
 }
-
