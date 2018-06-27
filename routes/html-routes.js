@@ -1,5 +1,3 @@
-// this is our app
-
 // *********************************************************************************
 // html-routes.js - this file offers a set of routes for sending users to the various html pages
 // *********************************************************************************
@@ -13,8 +11,8 @@ var path = require("path");
 module.exports = function(app) {
 
 // people route loads blog.html
-app.get("/people", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/addPerson.html"));
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
   app.get("/people", function(req, res) {
@@ -26,12 +24,11 @@ app.get("/people", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/myLocations.html"));
   });
 
-  app.get("/locations", function(req, res) {
+  app.get("/add/location", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/addLocation.html"));
   });
 
   app.get("/add/person", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/addPerson.html"));
   });
-
 };
