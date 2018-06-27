@@ -6,23 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/myLocations.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <title>Add Locations</title>
-    <style>
-        /* Always set the map height explicitly to define the size of the div
-         * element that contains the map. */
-        #map {
-            height: 75%;
-            width: 50%;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-    </style>
+
 </head>
 <body>
 
@@ -52,9 +39,10 @@
                 </li>
             </ul>
     
+    <div class="row main">
     <button id='findMe'>Find Me!</button>
     <div id='map'></div>
-    
+    </div>
 
     <script src="/js/addLocation.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY4Yg9O63QZOIF726F2IWsBNosiegpv9M&callback=initMap&libraries=geometry"></script>

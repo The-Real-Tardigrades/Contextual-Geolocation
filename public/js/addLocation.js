@@ -11,6 +11,7 @@ function initMap() {
 
     map.addListener('click', function (e) {
         placeMarker(e.latLng, map);
+
         let newLocation = {
             locationName: "test",
             latitude: e.latLng.lat,

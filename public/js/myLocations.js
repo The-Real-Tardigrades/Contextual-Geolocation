@@ -45,6 +45,9 @@ function getLocations() {
             var latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
             console.log(latLng);
             placeMarker(latLng, map);
+            let newRow = $("<tr>");
+            newRow.text(data[i].locationName);
+            $("#locationsTable > tbody").append(newRow);
         }
     });
 }
