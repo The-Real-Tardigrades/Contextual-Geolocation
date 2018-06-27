@@ -3,6 +3,12 @@
     
 }
 
+.btn waves-effect waves-light {
+    background-color: rgb(69, 126, 248);
+    
+}
+
+
 .row {
     text-align: center;
 }
