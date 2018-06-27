@@ -7,41 +7,51 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/myLocations.css">
     <script src="https://code.jquery.com/jquery.js"></script>
-
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/myLocations.css">
+    <title>My Locations</title>
 
 </head>
 
 <body>
-
+    <ul id="myLocationsdropdown" class="dropdown-content">
+        <li>
+            <a href="/locations">View Locations</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/add/location">Add/Edit</a>
+        </li>
+    </ul>
+    <ul id="myPeopledropdown" class="dropdown-content">
+        <li>
+            <a href="/people">View People</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/add/person">Add/Edit</a>
+        </li>
+    </ul>
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">My Locations</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                <i class="material-icons">menu</i>
-            </a>
+            <a href="/" class="brand-logo">Circle of Friends</a>
             <ul class="right hide-on-med-and-down">
+                <!-- Dropdown Trigger -->
                 <li>
-                    <a href="/locations">My Locations</a>
+                    <a class="dropdown-trigger" href="#!" data-target="myLocationsdropdown">My Locations
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
                 </li>
                 <li>
-                    <a href="/people">My People</a>
+                    <a class="dropdown-trigger" href="#!" data-target="myPeopledropdown">My People
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <ul class="sidenav" id="mobile-demo">
-        <li>
-            <a href="/locations">My Locations</a>
-        </li>
-        <li>
-            <a href="/people">My People</a>
-        </li>
-    </ul>
-    
+
     <div class="row main">
         <div class="col s12 l8" style="height: 100%">
             <div id='map'></div>
@@ -60,12 +70,12 @@
         
     </div>
 
-   
 
-    <script src="/js/myLocations.js"></script>
+    <script src="../js/myLocations.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY4Yg9O63QZOIF726F2IWsBNosiegpv9M&callback=initMap&libraries=geometry"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
 </body>
 
 </html>
