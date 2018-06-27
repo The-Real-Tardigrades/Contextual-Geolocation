@@ -1,3 +1,11 @@
+$(document).ready(function() {
+    $('.sidenav').sidenav();
+    $(".dropdown-trigger").dropdown( {
+        hover: true
+    });
+  });
+
+
 var labels = '123456789';
 var labelIndex = 0;
 
@@ -71,3 +79,4 @@ function checkDistance(userLocation, markerLocation) {
     }
     return false;
 }
+

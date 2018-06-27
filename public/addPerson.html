@@ -14,31 +14,42 @@
 </head>
 
 <body>
+    <ul id="myLocationsdropdown" class="dropdown-content">
+        <li>
+            <a href="/locations">View Locations</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/add/location">Add/Edit</a>
+        </li>
+    </ul>
+    <ul id="myPeopledropdown" class="dropdown-content">
+        <li>
+            <a href="/people">View People</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/add/person">Add/Edit</a>
+        </li>
+    </ul>
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">My People</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                <i class="material-icons">menu</i>
-            </a>
+            <a href="#!" class="brand-logo">Circle of Friends</a>
             <ul class="right hide-on-med-and-down">
+                <!-- Dropdown Trigger -->
                 <li>
-                    <a href="myLocations.html">My Locations</a>
+                    <a class="dropdown-trigger" href="#!" data-target="myLocationsdropdown">My Locations
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
                 </li>
                 <li>
-                    <a href="myPeople.html">My People</a>
+                    <a class="dropdown-trigger" href="#!" data-target="myPeopledropdown">My People
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
                 </li>
             </ul>
         </div>
     </nav>
-
-    <ul class="sidenav" id="mobile-demo">
-        <li>
-            <a href="myLocations.html">My Locations</a>
-        </li>
-        <li>
-            <a href="myPeople.html">My People</a>
-        </li>
-    </ul>
 
     <div class="row">
         <form class="col s12">
@@ -65,38 +76,52 @@
                         <label for="icon_prefix">Job Role</label>
                     </div>
                     <div class="input-field col s4">
-                            <i class="material-icons prefix">description</i>
-                            <textarea id="textarea1" class="materialize-textarea"></textarea>
-                            <label for="textarea1">Notes</label>
+                        <i class="material-icons prefix">description</i>
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Notes</label>
                     </div>
                     <div class="input-field col s4">
                         <!-- Dropdown Trigger -->
-  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Associate Location</a>
+                        <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Associate Location</a>
 
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">three</a></li>
-    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-  </ul>
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown1' class='dropdown-content'>
+                            <li>
+                                <a href="#!">one</a>
+                            </li>
+                            <li>
+                                <a href="#!">two</a>
+                            </li>
+                            <li class="divider" tabindex="-1"></li>
+                            <li>
+                                <a href="#!">three</a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                    <i class="material-icons">view_module</i>four</a>
+                            </li>
+                            <li>
+                                <a href="#!">
+                                    <i class="material-icons">cloud</i>five</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                    
+
         </form>
         </div>
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
-          </button>
+        </button>
 
-          <button class="btn waves-effect waves-light" type="submit" name="action">Discard
+        <button class="btn waves-effect waves-light" type="submit" name="action">Discard
             <i class="material-icons right">send</i>
-          </button>
+        </button>
 
 
+        <script type="text/javascript" src="../js/addPerson.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 </body>
-
 </html>

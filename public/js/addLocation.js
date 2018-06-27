@@ -1,3 +1,11 @@
+$(document).ready(function() {
+    $('.sidenav').sidenav();
+    $(".dropdown-trigger").dropdown( {
+        hover: true
+    });
+  });
+
+
 
 const labels = '123456789';
 let labelIndex = 0;
