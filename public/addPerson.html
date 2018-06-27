@@ -7,15 +7,16 @@
     <title>My People</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="css/myPeople.css">
-    <script src="main.js"></script>
+    <!-- intializer for dropdown menu for the locations that can be associated to a new person -->
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">My People</a>
+            <a href="#!" class="brand-logo">Add A Person</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
             </a>
@@ -64,13 +65,13 @@
                         <label for="icon_prefix">Job Role</label>
                     </div>
                     <div class="input-field col s4">
-                            <i class="material-icons prefix">description</i>
-                            <textarea id="textarea1" class="materialize-textarea"></textarea>
-                            <label for="textarea1">Notes</label>
+                        <i class="material-icons prefix">description</i>
+                        <textarea id="textarea1" class="materialize-textarea"></textarea>
+                        <label for="textarea1">Notes</label>
                     </div>
                     <div class="input-field col s4">
-                        <!-- Dropdown Trigger -->
-  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Associate Location</a>
+                          <!-- Dropdown Trigger -->
+  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
 
   <!-- Dropdown Structure -->
   <ul id='dropdown1' class='dropdown-content'>
@@ -83,19 +84,25 @@
   </ul>
                     </div>
                 </div>
-                    
         </form>
         </div>
+
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
-          </button>
+        </button>
 
-          <button class="btn waves-effect waves-light" type="submit" name="action">Discard
+        <button class="btn waves-effect waves-light" type="submit" name="action">Discard
             <i class="material-icons right">send</i>
-          </button>
+        </button>
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="../js/home.js"></script>
+         <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+            
 </body>
 
 </html>

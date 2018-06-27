@@ -12,42 +12,35 @@
 </head>
 
 <body class="bg">
-    <nav>
+    <nav class="default" role="navigation">
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">Circle of Friends</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+            <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large">
                 <i class="material-icons">menu</i>
             </a>
             <ul class="right hide-on-med-and-down">
                 <li>
-                    <a href="myLocations.html">My Locations</a>
+                    <a href="../public/myLocations.html">My Locations</a>
                 </li>
                 <li>
-                    <a href="myPeople.html">My People</a>
+                    <a href="../public/myPeople.html">My People</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <ul class="sidenav" id="mobile-demo">
-        <li>
-            <a href="myLocations.html">My Locations</a>
-        </li>
-        <li>
-            <a href="myPeople.html">My People</a>
-        </li>
-    </ul>
 
     <div class="intro">
         <h1>Welcome to Circle of Friends</h1>
         <p>Circle of friends is the fun way to know the people around you.
             <br> With Circle of Friends, you get notified with who you know. Click the Start Button to get started.</p>
-        <a class="waves-effect waves-light btn-large">
+            <a class="waves-effect waves-light btn-large" onclick="window.location.href='locations.html'"> <!--Created the start button to function-->
             <i class="material-icons left">public</i>Start</a>
     </div>
 
-    <link rel="stylesheet" type="text/javascript" href="index.js">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../js/home.js"></script>
 </body>
 
 </html>
