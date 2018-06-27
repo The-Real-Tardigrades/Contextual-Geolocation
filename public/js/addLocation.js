@@ -1,3 +1,4 @@
+
 const labels = '123456789';
 let labelIndex = 0;
 let map, infoWindow;
@@ -59,3 +60,4 @@ function placeMarker(latLng, map) {
     });
     circle.bindTo('center', marker, 'position');
 }
+
