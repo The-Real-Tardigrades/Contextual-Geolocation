@@ -27,7 +27,11 @@ app.get("/people", function(req, res) {
   });
 
   app.get("/locations", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/addLocations.html"));
+    res.sendFile(path.join(__dirname, "../public/addLocation.html"));
+  });
+
+  app.get("/add/person", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/addPerson.html"));
   });
 
 };
