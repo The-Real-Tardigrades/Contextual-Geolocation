@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var Location = sequelize.define("Location", {
+    var Locations = sequelize.define("Locations", {
       locationName: {
         type: DataTypes.STRING(100),
         allowNull: true,
@@ -28,5 +28,5 @@ module.exports = function(sequelize, DataTypes) {
           onDelete: "cascade"
         });
       };
-    return Location;
+    return Locations;
 };
