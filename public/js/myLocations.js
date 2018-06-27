@@ -26,7 +26,7 @@ function initMap() {
             $.get("/api/locations", function (data) {
                 for (var i = 0; i < data.length; i++) {
                 var latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
-                console.log(checkDistance(pos, latLng));
+                checkDistance(pos, latLng);
         }
     });
         }, function () {
@@ -69,5 +69,6 @@ function checkDistance(userLocation, markerLocation) {
     if (google.maps.geometry.spherical.computeDistanceBetween(userCoords, markerCoords) <= 100) {
         return true;
     }
+    
     return false;
 }
