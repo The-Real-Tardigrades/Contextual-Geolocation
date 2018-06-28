@@ -22,10 +22,14 @@ body {
 height: 100%;
 margin: 0;
 padding: 0;
-background-image: url("../images/maps.jpg");
+background-image: url("/images/maps.jpg");
 background-position: bottom center;  
     background-repeat: no-repeat;
     background-size: 50%;
     background-attachment: fixed;
 }
 
+#locationsTable {
+    font-family: 'Jura', sans-serif;
+    font-size: 25px;
+}

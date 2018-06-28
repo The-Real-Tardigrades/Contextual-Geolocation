@@ -15,30 +15,13 @@
 </head>
 
 <body class="bg">
-    <ul id="myLocationsdropdown" class="dropdown-content">
-        <li>
-            <a href="/locations">View Locations</a>
-        </li>
-        <li class="divider"></li>
-        <li>
-            <a href="/add/location">Add/Edit</a>
-        </li>
-    </ul>
-    <ul id="myPeopledropdown" class="dropdown-content">
-        <li>
-            <a href="/people">View People</a>
-        </li>
-        <li class="divider"></li>
-        <li>
-            <a href="/add/person">Add/Edit</a>
-        </li>
-    </ul>
-
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">My People</a>
+            <a href="/" class="brand-logo">Circle of Friends</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
             <ul class="right hide-on-med-and-down">
-                <!-- Dropdown Trigger -->
                 <li>
                     <a class="trigger" href="/" data-target="myLocationsdropdown">Home
                         <i class="material-icons right">home</i>
@@ -60,8 +43,46 @@
                     </a>
                 </li>
             </ul>
+            <ul id="myLocationsdropdown" class="dropdown-content">
+                <li>
+                    <a href="/locations">View Locations</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="/add/location">Add/Edit</a>
+                </li>
+            </ul>
+            <ul id="myPeopledropdown" class="dropdown-content">
+                <li>
+                    <a href="/people">View People</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="/add/person">Add/Edit</a>
+                </li>
+            </ul>
         </div>
     </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/locations">My Locations</a>
+        </li>
+        <li>
+            <a href="add/location">Add/Edit Locations</a>
+        </li>
+        <li>
+            <a href="/people">My People</a>
+        </li>
+        <li>
+            <a href="/add/person">Add/Edit People</a>
+        </li>
+        <li>
+            <a href="/aboutUs">About Us</a>
+        </li>
+    </ul>
 
     <h1>My People</h1>
     <div class="row">
@@ -78,13 +99,12 @@
                 </tr>
             </thead>
             <tbody></tbody>
-        </div>
+    </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="../js/myPeople.js"></script>
-    <script src="main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
 </body>
 
