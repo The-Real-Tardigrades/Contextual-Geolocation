@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Locations</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="css/myLocations.css">
-    <title>My Locations</title>
+    <!-- Added font family cdn -->
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
 
 </head>
 
@@ -34,9 +36,14 @@
     </ul>
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Circle of Friends</a>
+            <a href="#!" class="brand-logo">My Locations</a> <!-- Updated route & header-->
             <ul class="right hide-on-med-and-down">
                 <!-- Dropdown Trigger -->
+                <li>
+                    <a class="trigger" href="/" data-target="myLocationsdropdown">Home
+                        <i class="material-icons right">home</i>
+                    </a>
+                </li>
                 <li>
                     <a class="dropdown-trigger" href="#!" data-target="myLocationsdropdown">My Locations
                         <i class="material-icons right">arrow_drop_down</i>
@@ -45,6 +52,11 @@
                 <li>
                     <a class="dropdown-trigger" href="#!" data-target="myPeopledropdown">My People
                         <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="trigger" href="/" data-target="myLocationsdropdown">About Us
+                        <i class="material-icons right">group</i>
                     </a>
                 </li>
             </ul>
