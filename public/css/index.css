@@ -1,10 +1,13 @@
 .nav-wrapper {
     background-color: rgb(69, 126, 248);
+    font-family: 'Jura', sans-serif;
 }
 
 .intro {
     text-align: center;
     margin-top: 20px;
+    font-family: 'Jura', sans-serif;
+    font-size: 25px;
 }
 
 .waves-effect {
@@ -20,6 +23,6 @@ body, html {
     height: 100%; 
     background-position: bottom center;  
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 50%;
     background-attachment: fixed;
 }
