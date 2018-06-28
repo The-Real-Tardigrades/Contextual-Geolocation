@@ -86,63 +86,45 @@
     <br>
     <div class="container">
         <h1>Add a Person</h1>
-        <form action="/action_page.php">
+        <form>
             <div class="input-field col s4">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">First Name</label>
+                <input id="firstName" type="text" class="validate">
+                <label for="firstName">First Name</label>
             </div>
             <div class="input-field col s4">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Last Name</label>
+                <input id="lastName" type="text" class="validate">
+                <label for="lastName">Last Name</label>
             </div>
             <div class="input-field col s4">
                 <i class="material-icons prefix">account_circle</i>
-                <input id="icon_telephone" type="tel" class="validate">
-                <label for="icon_telephone">Nickname</label>
+                <input id="nickname" type="text" class="validate">
+                <label for="nickname">Nickname</label>
             </div>
             <div class="input-field col s4">
                 <i class="material-icons prefix">assignment_ind</i>
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix">Job Role</label>
+                <input id="job" type="text" class="validate">
+                <label for="job">Job Role</label>
             </div>
-            <label for="icon_prefix">Notes</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            <div class="input-field col s4">
+                    <i class="material-icons prefix">location_on</i>
+                    <select id="selectLocation">
+                      <option value="" disabled selected>Choose an option</option>
+                    </select>
+                    <label>Associate to Location</label>
+            </div>
 
-            <button class="btn-large waves-effect waves-light" type="submit" name="action" id="submitButton">Submit
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+            <button class="btn waves-effect waves-light" type="submit" id="submitButton">Submit
                 <i class="material-icons right">send</i>
             </button>
 
-            <button class="btn-large waves-effect waves-light" type="submit" name="action" id="myButton">Discard
+            <button class="btn waves-effect waves-light" type="submit" id="deleteButton">Discard
                 <i class="material-icons right">delete</i>
             </button>
-
-            <div class="input-field col s4">
-                <a class='dropdown-trigger btn-large' href='#' data-target='dropdown1' id="locationButton">Associate Location
-                    <i class="material-icons right">add_location</i>
-                </a>
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li>
-                        <a href="#!">one</a>
-                    </li>
-                    <li>
-                        <a href="#!">two</a>
-                    </li>
-                    <li class="divider" tabindex="-1"></li>
-                    <li>
-                        <a href="#!">three</a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <i class="material-icons">view_module</i>four</a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <i class="material-icons">cloud</i>five</a>
-                    </li>
-                </ul>
-            </div>
         </form>
     </div>
 
@@ -151,9 +133,8 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <script src="main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../js/addPerson.js"></script>
+    <script type="text/javascript" src="/js/addPerson.js"></script>
 </body>
 
 </html>

@@ -15,26 +15,26 @@ module.exports = function(app) {
   // GET route for getting all of the people
   app.get("/api/people", function(req, res) {
     var query = {};
-    if (req.query.location_id) {
+    if (req.query.Location_id) {
       query.LocationId = req.query.location_id;
     }
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Location
-    db.Post.findAll({
+    db.People.findAll({
       where: query,
-      include: [db.Location]
+      include: [db.Locations]
     }).then(function(dbPeople) {
       res.json(dbPeople);
     });
   });
 
-  // Get route for retrieving a single post
+  // Get route for retrieving a single person
   app.get("/api/people/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Location
-    db.Post.findOne({
+    db.People.findOne({
       where: {
         id: req.params.id
       },
@@ -44,16 +44,15 @@ module.exports = function(app) {
     });
   });
 
-  // POST route for saving a new post
   app.post("/api/people", function(req, res) {
-    db.Post.create(req.body).then(function(dbPeople) {
+    db.People.create(req.body).then(function(dbPeople) {
       res.json(dbPeople);
     });
   });
 
   // DELETE route for deleting people
   app.delete("/api/people/:id", function(req, res) {
-    db.Post.destroy({
+    db.People.destroy({
       where: {
         id: req.params.id
       }
