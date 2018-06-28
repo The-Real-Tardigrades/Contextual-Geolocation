@@ -16,29 +16,13 @@
 </head>
 
 <body>
-    <ul id="myLocationsdropdown" class="dropdown-content">
-        <li>
-            <a href="/locations">View Locations</a>
-        </li>
-        <li class="divider"></li>
-        <li>
-            <a href="/add/location">Add/Edit</a>
-        </li>
-    </ul>
-    <ul id="myPeopledropdown" class="dropdown-content">
-        <li>
-            <a href="/people">View People</a>
-        </li>
-        <li class="divider"></li>
-        <li>
-            <a href="/add/person">Add/Edit</a>
-        </li>
-    </ul>
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">My Locations</a> <!-- Updated route & header-->
+            <a href="/" class="brand-logo">Circle of Friends</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
             <ul class="right hide-on-med-and-down">
-                <!-- Dropdown Trigger -->
                 <li>
                     <a class="trigger" href="/" data-target="myLocationsdropdown">Home
                         <i class="material-icons right">home</i>
@@ -60,8 +44,46 @@
                     </a>
                 </li>
             </ul>
+            <ul id="myLocationsdropdown" class="dropdown-content">
+                <li>
+                    <a href="/locations">View Locations</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="/add/location">Add/Edit</a>
+                </li>
+            </ul>
+            <ul id="myPeopledropdown" class="dropdown-content">
+                <li>
+                    <a href="/people">View People</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="/add/person">Add/Edit</a>
+                </li>
+            </ul>
         </div>
     </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/locations">My Locations</a>
+        </li>
+        <li>
+            <a href="add/location">Add/Edit Locations</a>
+        </li>
+        <li>
+            <a href="/people">My People</a>
+        </li>
+        <li>
+            <a href="/add/person">Add/Edit People</a>
+        </li>
+        <li>
+            <a href="/aboutUs">About Us</a>
+        </li>
+    </ul>
 
 
     <div class="row main">
@@ -77,9 +99,9 @@
                     </tr>
                 </thead>
                 <tbody></tbody>
-            </div>
         </div>
-    
+    </div>
+
     </div>
 
 

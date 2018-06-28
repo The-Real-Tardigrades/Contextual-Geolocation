@@ -8,14 +8,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
     <!--Added font-family cdn-->
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
 
 </head>
 
 <body class="bg">
-        <ul id="myLocationsdropdown" class="dropdown-content">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Circle of Friends</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul class="right hide-on-med-and-down">
+                <li>
+                    <a class="dropdown-trigger" href="#!" data-target="myLocationsdropdown">My Locations
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-trigger" href="#!" data-target="myPeopledropdown">My People
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="trigger" href="/" data-target="myLocationsdropdown">About Us
+                        <i class="material-icons right">group</i>
+                    </a>
+                </li>
+            </ul>
+            <ul id="myLocationsdropdown" class="dropdown-content">
                 <li>
                     <a href="/locations">View Locations</a>
                 </li>
@@ -32,31 +55,29 @@
                 <li>
                     <a href="/add/person">Add/Edit</a>
                 </li>
-                <li>
-                    <a class="trigger" href="/" data-target="myLocationsdropdown">About Us
-                        <i class="material-icons right">group</i>
-                    </a>
-                </li>
             </ul>
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="/" class="brand-logo">Circle of Friends</a>
-                    <ul class="right hide-on-med-and-down">
-                        <!-- Dropdown Trigger -->
-                        <li>
-                            <a class="dropdown-trigger" href="#!" data-target="myLocationsdropdown">My Locations
-                                <i class="material-icons right">arrow_drop_down</i>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-trigger" href="#!" data-target="myPeopledropdown">My People
-                                <i class="material-icons right">arrow_drop_down</i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
+        </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+        <li>
+            <a href="/">Home</a>
+        </li>
+        <li>
+            <a href="/locations">My Locations</a>
+        </li>
+        <li>
+            <a href="add/location">Add/Edit Locations</a>
+        </li>
+        <li>
+            <a href="/people">My People</a>
+        </li>
+        <li>
+            <a href="/add/person">Add/Edit People</a>
+        </li>
+        <li>
+                <a href="/aboutUs">About Us</a>
+            </li>
+    </ul>
 
     <div class="intro">
         <h1>Welcome to Circle of Friends</h1>
@@ -67,16 +88,13 @@
         </section>
 
         <a class="waves-effect waves-light btn-large" onclick="window.location.href='/locations'">
-            <!--Created the start button to function-->
-            <a class="waves-effect waves-light btn-large" onclick="window.location.href='/locations'"> <!--Created the start button to function-->
-
             <i class="material-icons left">public</i>Start</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="../js/home.js"></script>
+    <script type="text/javascript" src="/js/home.js"></script>
 </body>
 
 </html>

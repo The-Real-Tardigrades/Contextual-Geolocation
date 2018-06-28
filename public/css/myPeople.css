@@ -10,10 +10,18 @@
 }
 
 .bg {
-    background-image: url("../images/maps.jpg");
+    background-image: url("/images/maps.jpg");
     height: 100%; 
     background-position: bottom center;  
     background-repeat: no-repeat;
     background-size: 50%;
     background-attachment: fixed;
+}
+
+.row {
+    font-family: 'Jura', sans-serif;
+}   
+
+h1 {
+    font-family: 'Jura', sans-serif;
 }
