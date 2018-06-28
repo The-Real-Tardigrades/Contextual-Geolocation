@@ -1,3 +1,48 @@
 .nav-wrapper {
     background-color: rgb(69, 126, 248);
 }
+
+#map {
+    border-style: groove;
+    border-color: rgb(0, 0, 0);
+    height: 80%;
+    width: 100%;
+  }
+  
+  .main {
+      width: 90%;
+      height: 100%;
+      margin-top: 30px;
+  
+  }
+  
+  html,
+  body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/maps.jpg");
+  background-position: bottom center;  
+      background-repeat: no-repeat;
+      background-size: 90%;
+      background-attachment: fixed;
+  }
+
+  .step {
+      text-decoration: underline;
+      font-weight: bold;
+      font-size: 16px;
+  }
+
+  .modal {
+      color: black;
+  }
+
+.bg {
+    background-image: url("../images/maps.jpg");
+    height: 100%; 
+    background-position: bottom center;  
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-attachment: fixed;
+}

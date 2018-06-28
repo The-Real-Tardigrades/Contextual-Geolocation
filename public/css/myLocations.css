@@ -1,9 +1,9 @@
 .nav-wrapper {
     background-color: rgb(69, 126, 248);
+    font-family: 'Jura', sans-serif;
 }
 
 #map {
-  margin-top: 5%;
   border-style: groove;
   border-color: rgb(0, 0, 0);
   height: 80%;
@@ -25,7 +25,7 @@ padding: 0;
 background-image: url("../images/maps.jpg");
 background-position: bottom center;  
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 50%;
     background-attachment: fixed;
 }
 
