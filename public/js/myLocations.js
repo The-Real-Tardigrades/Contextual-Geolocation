@@ -12,8 +12,8 @@ var labelIndex = 0;
 var map, infoWindow;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 50, lng: -100 },
-        zoom: 6
+        center: { lat: 41.850033, lng: -87.6500523 },
+        zoom: 4.5
     });
     infoWindow = new google.maps.InfoWindow;
     getLocations();
@@ -30,11 +30,16 @@ function initMap() {
             infoWindow.setContent('You are here');
             infoWindow.open(map);
             map.setCenter(pos);
-            map.setZoom(15);
+            map.setZoom(12);
             $.get("/api/locations", function (data) {
                 for (var i = 0; i < data.length; i++) {
                 var latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
-                checkDistance(pos, latLng);
+                if(checkDistance(pos, latLng)) {
+                    console.log(data[i]);
+                    // let info = $("<p>");
+                    // info.text(data[i]);
+                    // $("#locationDetails").append(info);
+                };
         }
     });
         }, function () {
@@ -51,7 +56,6 @@ function getLocations() {
     $.get("/api/locations", function (data) {
         for (var i = 0; i < data.length; i++) {
             var latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
-            console.log(latLng);
             placeMarker(latLng, map);
             let newRow = $("<tr>");
             newRow.text(data[i].locationName);

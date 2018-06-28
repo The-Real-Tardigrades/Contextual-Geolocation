@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/myLocations.css">
+    <link rel="stylesheet" type="text/css" href="/css/addLocation.css">
     <title>Add Location</title>
     
 </head>
@@ -52,12 +52,42 @@
     </nav>
     
         <div class="row main">
-                <a id='findMe' class="waves-effect waves-light btn">Find Me!</a>
-                <div id='map'></div>
+            <div class="col s12 l4" id="instructions">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Instructions</span>
+                        <p class="step">Step One:</p>
+                        <div class="input-field">
+                            <i class="material-icons prefix">create</i>
+                            <input id="newLocation" type="text" class="validate">
+                            <label for="newLocation">Enter a location name</label>
+                        </div>
+                        <p class="step">Step Two:</p>
+                        <p>Place a marker on the map at the location you want to save. (You can move the marker around before submitting)</p>
+                        <a id='findMe' class="waves-effect waves-light btn">Find My Current Location</a>
+                        <p class="step">Step Three:</p>
+                        <a id='submit' class="waves-effect waves-light btn modal-trigger" href="#modal1">Submit</a>
+                        <div id="modal1" class="modal">
+                                <div class="modal-content">
+                                  <h4>New Location Added!</h4>
+                                  <p id="showUser"></p>
+                                </div>
+                                <div class="modal-footer">
+                                  <a href="/locations" class="modal-close waves-effect waves-green btn-flat">See My Locations</a>
+                                  <a href="#" class="modal-close waves-effect waves-green btn-flat">Add Another Location</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 l8" style="height: 100%">
+                    <div id='map'></div>
+                </div>
         </div>
 
 
-    <script src="../js/addLocation.js"></script>
+
+    <script src="/js/addLocation.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY4Yg9O63QZOIF726F2IWsBNosiegpv9M&callback=initMap&libraries=geometry"></script>
