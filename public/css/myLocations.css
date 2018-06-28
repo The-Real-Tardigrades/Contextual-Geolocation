@@ -4,12 +4,18 @@
 }
 
 #map {
-margin-top: 5%;
-border-style: groove;
-border-color: rgb(0, 0, 0);
-height: 50%;
-width: 50%;
-display: block;
+  margin-top: 5%;
+  border-style: groove;
+  border-color: rgb(0, 0, 0);
+  height: 80%;
+  width: 100%;
+}
+
+.main {
+    width: 90%;
+    height: 100%;
+    margin-top: 30px;
+
 }
 
 html,
