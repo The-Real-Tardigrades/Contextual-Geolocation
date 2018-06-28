@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/myPeople.css">
+    <!--Added font-family cdn-->
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+</head>
+
+<body class="bg">
+    <ul id="myLocationsdropdown" class="dropdown-content">
+        <li>
+            <a href="/locations">View Locations</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/add/location">Add/Edit</a>
+        </li>
+    </ul>
+    <ul id="myPeopledropdown" class="dropdown-content">
+        <li>
+            <a href="/people">View People</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/add/person">Add/Edit</a>
+        </li>
+    </ul>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">About Us</a>
+            <ul class="right hide-on-med-and-down">
+                <!-- Dropdown Trigger -->
+                <li>
+                    <a class="trigger" href="/" data-target="myLocationsdropdown">Home
+                        <i class="material-icons right">home</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-trigger" href="#!" data-target="myLocationsdropdown">My Locations
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-trigger" href="#!" data-target="myPeopledropdown">My People
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/myPeople.js"></script>
+    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+</body>
+
+</html>

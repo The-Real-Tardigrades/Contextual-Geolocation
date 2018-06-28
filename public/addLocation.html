@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Location</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/addLocation.css">
-    <title>Add Location</title>
+    <link rel="stylesheet" type="text/css" href="/css/addLocation.css">
+    <!-- Added font family cdn -->
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+    
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
@@ -30,7 +33,7 @@
     </style>
 </head>
 
-<body>
+<body class="bg">
     <ul id="myLocationsdropdown" class="dropdown-content">
         <li>
             <a href="/locations">View Locations</a>
@@ -51,9 +54,14 @@
     </ul>
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Circle of Friends</a>
+            <a href="#!" class="brand-logo">Add/Edit Location</a>
             <ul class="right hide-on-med-and-down">
                 <!-- Dropdown Trigger -->
+                <li>
+                    <a class="trigger" href="/" data-target="myLocationsdropdown">Home
+                        <i class="material-icons right">home</i>
+                    </a>
+                </li>
                 <li>
                     <a class="dropdown-trigger" href="#!" data-target="myLocationsdropdown">My Locations
                         <i class="material-icons right">arrow_drop_down</i>
@@ -64,9 +72,15 @@
                         <i class="material-icons right">arrow_drop_down</i>
                     </a>
                 </li>
+                <li>
+                    <a class="trigger" href="/" data-target="myLocationsdropdown">About Us
+                        <i class="material-icons right">group</i>
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
+    
     <button id='findMe'>Find Me!</button>
     <div id='map'></div>
 
