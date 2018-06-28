@@ -1,34 +1,33 @@
+let map, infoWindow, marker;
 $(document).ready(function() {
     $('.sidenav').sidenav();
+    $("#submit").on("click", function (){
+        let newLocation = {
+            locationName: $("#newLocation").val().trim(),
+            latitude: marker.getPosition().lat(),
+            longitude: marker.getPosition().lng(),
+            radius: 100
+        }
+        $.post("/api/locations", newLocation).then(function (data) {
+            $("#showUser").text("'" + data.locationName + "' has been added to your locations.");
+        });
+        $("#newLocation").val("");
+        $('.modal').modal();
+    });
     $(".dropdown-trigger").dropdown( {
         hover: true
     });
   });
 
-
-
-const labels = '123456789';
-let labelIndex = 0;
-let map, infoWindow;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 50, lng: -100 },
-        zoom: 6
+        center: { lat: 41.850033, lng: -87.6500523 },
+        zoom: 4.5
     });
     infoWindow = new google.maps.InfoWindow;
 
     map.addListener('click', function (e) {
         placeMarker(e.latLng, map);
-        let newLocation = {
-            locationName: "test",
-            latitude: e.latLng.lat,
-            longitude: e.latLng.lng,
-            radius: 100
-        }
-
-        $.post("/api/locations", newLocation).then(function (data) {
-            console.log(data);
-        });
 
     });
 
@@ -57,16 +56,20 @@ function initMap() {
 };
 
 function placeMarker(latLng, map) {
-    let marker = new google.maps.Marker({
+    if (marker === undefined){
+        marker = new google.maps.Marker({
         position: latLng,
-        label: labels[labelIndex++ % labels.length],
         map: map
-    });
+        });
+    }   
+    else {
+        marker.setPosition(latLng);
+    }
     let circle = new google.maps.Circle({
         map: map,
         radius: 100,
         fillColor: '#AA0000'
     });
     circle.bindTo('center', marker, 'position');
-}
+};
 
