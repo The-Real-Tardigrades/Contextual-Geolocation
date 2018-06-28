@@ -1,3 +1,11 @@
+$(document).ready(function() {
+    $('.sidenav').sidenav();
+    $(".dropdown-trigger").dropdown( {
+        hover: true
+    });
+  });
+
+
 
 const labels = '123456789';
 let labelIndex = 0;
@@ -37,6 +45,7 @@ function initMap() {
                 infoWindow.setContent('Location found.');
                 infoWindow.open(map);
                 map.setCenter(pos);
+                map.setZoom(15);
             }, function () {
                 handleLocationError(true, infoWindow, map.getCenter());
             });

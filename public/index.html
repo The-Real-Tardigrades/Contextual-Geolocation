@@ -12,18 +12,45 @@
 </head>
 
 <body class="bg">
-    <nav class="default" role="navigation">
+    <ul id="myLocationsdropdown" class="dropdown-content">
+        <li>
+            <a href="/locations">View Locations</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/add/location">Add/Edit</a>
+        </li>
+    </ul>
+    <ul id="myPeopledropdown" class="dropdown-content">
+        <li>
+            <a href="/people">View People</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+            <a href="/add/person">Add/Edit</a>
+        </li>
+    </ul>
+    <nav>
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">Circle of Friends</a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large">
-                <i class="material-icons">menu</i>
-            </a>
             <ul class="right hide-on-med-and-down">
+                <!-- Dropdown Trigger -->
                 <li>
-                    <a href="../public/myLocations.html">My Locations</a>
+
+                    <a class="dropdown-trigger" href="#!" data-target="myLocationsdropdown">My Locations
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
                 </li>
                 <li>
-                    <a href="../public/myPeople.html">My People</a>
+                    <a class="dropdown-trigger" href="#!" data-target="myPeopledropdown">My People
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+
+                    <a href="/locations">My Locations</a>
+                </li>
+                <li>
+                    <a href="/people">My People</a>
+
                 </li>
             </ul>
         </div>
@@ -34,11 +61,14 @@
         <h1>Welcome to Circle of Friends</h1>
         <p>Circle of friends is the fun way to know the people around you.
             <br> With Circle of Friends, you get notified with who you know. Click the Start Button to get started.</p>
-            <a class="waves-effect waves-light btn-large" onclick="window.location.href='locations.html'"> <!--Created the start button to function-->
+            <!--Created the start button to function-->
+            <a class="waves-effect waves-light btn-large" onclick="window.location.href='/locations'"> <!--Created the start button to function-->
+
             <i class="material-icons left">public</i>Start</a>
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="../js/home.js"></script>
 </body>
