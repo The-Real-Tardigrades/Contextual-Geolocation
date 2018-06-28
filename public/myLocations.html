@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/myLocations.css">
+    <link rel="stylesheet" type="text/css" href="/css/myLocations.css">
     <!-- Added font family cdn -->
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
 
@@ -63,9 +63,7 @@
         </div>
     </nav>
 
-    <div id='map'></div>
 
-    
     <div class="row main">
         <div class="col s12 l8" style="height: 100%">
             <div id='map'></div>
@@ -78,13 +76,14 @@
                         <th>Location Name</th>
                     </tr>
                 </thead>
+                <tbody></tbody>
             </div>
         </div>
-        
+    
     </div>
 
 
-    <script src="../js/myLocations.js"></script>
+    <script src="/js/myLocations.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY4Yg9O63QZOIF726F2IWsBNosiegpv9M&callback=initMap&libraries=geometry"></script>
