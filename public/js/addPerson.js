@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    var locationSelect = $("#locationSelect");
-    $('select').formSelect();
+    let locationSelect = $("#selectLocation");
     getLocations();
+    $('select').formSelect();
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown({
         hover: true
@@ -14,7 +14,8 @@ $(document).ready(function() {
             lastName: $("#lastName").val().trim(),
             nickname: $("#nickname").val().trim(),
             role: $("#job").val().trim(),
-            notes: $("#notes").val()
+            notes: $("#notes").val(),
+            LocationId: locationSelect.val()
         }
         $.post("/api/people", newPerson).then(function(data){
             console.log(data);
@@ -27,22 +28,22 @@ $(document).ready(function() {
     }
     // Function to either render a list of locations
     function renderLocationList(data) {
-        var rowsToAdd = [];
-        for (var i = 0; i < data.length; i++) {
+        let rowsToAdd = [];
+        for (let i = 0; i < data.length; i++) {
             rowsToAdd.push(createLocationRow(data[i]));
         }
         locationSelect.empty();
         console.log(rowsToAdd);
         console.log(locationSelect);
         locationSelect.append(rowsToAdd);
+        $('select').formSelect();
     }
 
     // Creates the location options in the dropdown
     function createLocationRow(location) {
-        var listOption = $("<option>");
+        let listOption = $("<option>");
         listOption.attr("value", location.id);
         listOption.text(location.locationName);
-        $('select').formSelect();
         return listOption;
     }
 });

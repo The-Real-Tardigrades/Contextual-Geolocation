@@ -16,6 +16,8 @@ $(document).ready(function() {
         let nickname = $("<td>").text(person.nickname);
         let role = $("<td>").text(person.role);
         let notes = $("<td>").text(person.notes);
-        $("#peopleTable > tbody").append(newRow.append(firstName).append(lastName).append(nickname).append(role).append(notes));
+        let location = $("<td>").text(person.Location.locationName);
+        console.log(location);
+        $("#peopleTable > tbody").append(newRow.append(firstName).append(lastName).append(nickname).append(role).append(notes).append(location));
     });
 });
