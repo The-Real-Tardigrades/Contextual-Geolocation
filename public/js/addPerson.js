@@ -20,6 +20,12 @@ $(document).ready(function() {
         $.post("/api/people", newPerson).then(function (data) {
             console.log(data);
         })
+
+       /* $("#firstName").val(""); 
+        $("#lastName").val("");
+        $("#nickname").val("");
+        $("#job").val("");
+        $("#notes").val(""); */
     });
 
     // A function to get Locations and then render our list of Locations
