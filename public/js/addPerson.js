@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var locationSelect = $("#locationSelect");
     $('select').formSelect();
     getLocations();
@@ -7,7 +7,7 @@ $(document).ready(function() {
         hover: true
     });
 
-    $("#submitButton").on("click", function (){
+    $("#submitButton").on("click", function () {
         event.preventDefault();
         let newPerson = {
             firstName: $("#firstName").val().trim(),
@@ -16,7 +16,7 @@ $(document).ready(function() {
             role: $("#job").val().trim(),
             notes: $("#notes").val()
         }
-        $.post("/api/people", newPerson).then(function(data){
+        $.post("/api/people", newPerson).then(function (data) {
             console.log(data);
         })
     });
