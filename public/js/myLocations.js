@@ -1,11 +1,13 @@
 $(document).ready(function() {
+    // materialize initializations
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown( {
         hover: true
     });
   });
 
-var map, infoWindow;
+// Initialize the google map.
+let map, infoWindow;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 41.850033, lng: -87.6500523 },
@@ -14,10 +16,10 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow;
     getLocations();
 
-    // Try HTML5 geolocation.
+    // Use HTML5 geolocation to find the user when they navigate to the page and zoom in on their location.
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(function (position) {
-            var pos = {
+            let pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
@@ -26,10 +28,13 @@ function initMap() {
             infoWindow.setContent('You are here');
             infoWindow.open(map);
             map.setCenter(pos);
-            map.setZoom(12);
+            map.setZoom(15);
+
+            // Checks to see if the user is located in one of their saved locations and if so, displays
+            // the information the user has saved for that location.
             $.get("/api/locations", function (data) {
-                for (var i = 0; i < data.length; i++) {
-                var latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
+                for (let i = 0; i < data.length; i++) {
+                let latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
                 if(checkDistance(pos, latLng)) {
                     console.log(data[i]);
                     let foundData = $("<div>");
@@ -38,7 +43,10 @@ function initMap() {
                         foundData.append(info);
                     }
                     $("#locationDetails").append(foundData);
-                };
+                }
+                // else {
+                //     $("#locationDetails").empty();
+                // };
         }
     });
         }, function () {
@@ -51,10 +59,11 @@ function initMap() {
     
 }
 
+// Get all of the user's saved locations and place markers on the map for each location.
 function getLocations() {
     $.get("/api/locations", function (data) {
-        for (var i = 0; i < data.length; i++) {
-            var latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
+        for (let i = 0; i < data.length; i++) {
+            let latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
             placeMarker(latLng, map);
             let newRow = $("<tr>");
             newRow.text(data[i].locationName);
@@ -63,12 +72,13 @@ function getLocations() {
     });
 }
 
+// The function that places a marker at the user's saved locations.
 function placeMarker(latLng, map) {
-    var marker = new google.maps.Marker({
+    let marker = new google.maps.Marker({
         position: latLng,
         map: map
     });
-    var circle = new google.maps.Circle({
+    let circle = new google.maps.Circle({
         map: map,
         radius: 100,
         fillColor: '#AA0000'
@@ -76,9 +86,10 @@ function placeMarker(latLng, map) {
     circle.bindTo('center', marker, 'position');
 }
 
+// Computes to see if the user is located within 100 units of one of their saved locations.
 function checkDistance(userLocation, markerLocation) {
-    var userCoords = new google.maps.LatLng(userLocation.lat, userLocation.lng);
-    var markerCoords = new google.maps.LatLng(markerLocation.lat, markerLocation.lng);
+    let userCoords = new google.maps.LatLng(userLocation.lat, userLocation.lng);
+    let markerCoords = new google.maps.LatLng(markerLocation.lat, markerLocation.lng);
     if (google.maps.geometry.spherical.computeDistanceBetween(userCoords, markerCoords) <= 100) {
         return true;
     }
