@@ -1,19 +1,20 @@
-// var Nightmare = require("nightmare");
+var Nightmare = require("nightmare");
 
-// // STORY: As a developer nerd, I want to be able to take courses on web tech.
-// new Nightmare({ show: true })
-//   // Visit start page page
-//   .goto("http://circle-of-friends.herokuapp.com")
-//   .wait(1000)
+// STORY: As a developer nerd, I want to be able to take courses on web tech.
+new Nightmare({ show: true })
+  // Visit start page page
+  .goto("http://circle-of-friends.herokuapp.com")
+  .wait(1000)
+  // .screeshot(login.png)
 // // run a test on the landing page start button
-// .click(body > div.intro > a)
-// .wait(1000)
+// // .click(body > div.intro > a)
+// // .wait(1000)
 // // check the mylocations in the nav bar
 // // .click(#mobile-demo > li:nth-child(2) > a)
-// .wait(1000)
+// // .wait(1000)
 // // check the edit locations in th nav bar
 // // .click(body > nav > div > ul > li:nth-child(1) > a)
-// .wait(1000)
+// // .wait(1000)
 // //   add a new location
 // .type(#instructions > div > div > div.input-field > label, "random location")
 // .wait(500)
@@ -40,13 +41,13 @@
 // .click(#mobile-demo > li:nth-child(4) > a)
 // .screenshot("myPeople2.png")
 // ,wait (3000)
-//   // End test
-//   .end()
-//   // Execute commands
-//   .then(function() {
-//     console.log("Done!");
-//   })
-//   // Catch errors
-//   .catch(function(err) {
-//     console.log(err);
-//   });
+  // End test
+  .end()
+  // Execute commands
+  .then(function() {
+    console.log("Done!");
+  })
+  // Catch errors
+  .catch(function(err) {
+    console.log(err);
+  });

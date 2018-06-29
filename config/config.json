@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "",
+    "username": "root",
     "password": "root",
     "database": "circleOfFriends",
     "host": "127.0.0.1",
