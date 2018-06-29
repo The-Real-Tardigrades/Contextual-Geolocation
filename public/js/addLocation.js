@@ -2,7 +2,6 @@ let map, infoWindow, marker;
 $(document).ready(function() {
     $('.sidenav').sidenav();
     $("#submit").on("click", function (){
-        event.preventDefault();
         
         let newLocation = {
             locationName: $("#newLocation").val().trim(),
