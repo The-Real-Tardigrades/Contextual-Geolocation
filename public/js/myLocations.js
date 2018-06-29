@@ -4,7 +4,7 @@ $(document).ready(function() {
     $(".dropdown-trigger").dropdown( {
         hover: true
     });
-  });
+});
 
 // Initialize the google map.
 let map, infoWindow;
@@ -32,17 +32,33 @@ function initMap() {
 
             // Checks to see if the user is located in one of their saved locations and if so, displays
             // the information the user has saved for that location.
+            $("#locationDetails").empty();
             $.get("/api/locations", function (data) {
                 for (let i = 0; i < data.length; i++) {
                 let latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
                 if(checkDistance(pos, latLng)) {
                     console.log(data[i]);
-                    let foundData = $("<div>");
+                    $("#locationDetails").empty();
+                    let foundData = $("<div class='foundData'>");
                     for(let j = 0; j < data[i].People.length; j++) {
-                        let info = $("<p>").text(data[i].People[j].firstName);
+                        let personObj = data[i].People[j];
+                        let info = $("<a class='waves-effect waves-light btn modal-trigger moreInfo' href='#personInfo'>").
+                        text(data[i].People[j].firstName + " " + data[i].People[j].lastName + " - " + data[i].People[j].role);
+                        info.data(personObj);
                         foundData.append(info);
                     }
                     $("#locationDetails").append(foundData);
+                    $(".moreInfo").on("click", function(){
+                        let person = $(".moreInfo").data();
+                        let title = $("<h5>");
+                        title.text(person.firstName + " " + person.lastName);
+                        let nickName = $("<p>").text("Nickname: " + person.nickname);
+                        let jobrole = $("<p>").text("Role: " + person.role);
+                        let notesOnPerson = $("<p>").text("Notes: " + person.notes);
+                        $(".modal-content").append(title).append(nickName).append(jobrole).append(notesOnPerson);
+                        
+                        $('.modal').modal();
+                    });
                 }
                 // else {
                 //     $("#locationDetails").empty();
@@ -56,7 +72,6 @@ function initMap() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
-    
 }
 
 // Get all of the user's saved locations and place markers on the map for each location.

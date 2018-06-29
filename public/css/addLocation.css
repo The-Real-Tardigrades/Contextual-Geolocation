@@ -45,8 +45,14 @@ body {
 
 #instructions {
     font-family: 'Jura', sans-serif;
+    font-weight: bold;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.8);
+    background: #f4b642;
+}
+
+.card label {
+    color: black;
+    opacity: 0.5;
 }
