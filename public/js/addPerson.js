@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    var locationSelect = $("#locationSelect");
-    $('select').formSelect();
+    var locationSelect = $("#selectLocation");
     getLocations();
+    $('select').formSelect();
     $('.sidenav').sidenav();
     $(".dropdown-trigger").dropdown({
         hover: true
@@ -35,6 +35,7 @@ $(document).ready(function() {
         console.log(rowsToAdd);
         console.log(locationSelect);
         locationSelect.append(rowsToAdd);
+        $('select').formSelect();
     }
 
     // Creates the location options in the dropdown
@@ -42,7 +43,6 @@ $(document).ready(function() {
         var listOption = $("<option>");
         listOption.attr("value", location.id);
         listOption.text(location.locationName);
-        $('select').formSelect();
         return listOption;
     }
 });
