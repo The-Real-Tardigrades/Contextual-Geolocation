@@ -1,12 +1,14 @@
-var Nightmare = require("nightmare");
+const Nightmare = require("nightmare");
 
-var nightmare = Nightmare({ show: true });
+const nightmare = Nightmare({ show: true });
 
 nightmare
-  .goto(" ")
-  .type("#search_form_input_homepage", "github nightmare")
-  .click("#search_button_homepage")
-  .wait("#links a")
+  .goto("http://localhost:8080/")
+  .screenshot("login.png")
+  .click(".btn-large")
+  .screenshot("locations.png")
+  .click("#locationContainer")
+  .click("#myPeopleDropdown")
   .evaluate(function() {
     return document.querySelector("#links a").href;
   })
