@@ -14,7 +14,8 @@ $(document).ready(function() {
             lastName: $("#lastName").val().trim(),
             nickname: $("#nickname").val().trim(),
             role: $("#job").val().trim(),
-            notes: $("#notes").val()
+            notes: $("#notes").val(),
+            LocationId: locationSelect.val()
         }
         $.post("/api/people", newPerson).then(function(data){
             console.log(data);

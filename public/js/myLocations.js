@@ -5,10 +5,6 @@ $(document).ready(function() {
     });
   });
 
-
-var labels = '123456789';
-var labelIndex = 0;
-
 var map, infoWindow;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -36,9 +32,12 @@ function initMap() {
                 var latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
                 if(checkDistance(pos, latLng)) {
                     console.log(data[i]);
-                    // let info = $("<p>");
-                    // info.text(data[i]);
-                    // $("#locationDetails").append(info);
+                    let foundData = $("<div>");
+                    for(let j = 0; j < data[i].People.length; j++) {
+                        let info = $("<p>").text(data[i].People[j].firstName);
+                        foundData.append(info);
+                    }
+                    $("#locationDetails").append(foundData);
                 };
         }
     });
@@ -67,7 +66,6 @@ function getLocations() {
 function placeMarker(latLng, map) {
     var marker = new google.maps.Marker({
         position: latLng,
-        label: labels[labelIndex++ % labels.length],
         map: map
     });
     var circle = new google.maps.Circle({
