@@ -32,7 +32,7 @@ background-position: bottom center;
 
 .foundData {
     font-family: 'Jura', sans-serif;
-    background-color: #f4b642;
+    background-color: #f7cb79;
     padding-left: 10px;
     padding-right: 10px;
     font-size: 20px;
@@ -49,4 +49,9 @@ background-position: bottom center;
     background-color: rgb(69, 126, 248);
     margin-bottom: 10px;
     margin-top: 10px;
+}
+
+.material-icons {
+    float: right;
+    background-color: rgb(69, 126, 248);
 }

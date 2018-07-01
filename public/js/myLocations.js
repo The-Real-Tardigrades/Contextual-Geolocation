@@ -18,8 +18,8 @@ function initMap() {
 
     // Use HTML5 geolocation to find the user when they navigate to the page and zoom in on their location.
     if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(function (position) {
-            let pos = {
+        navigator.geolocation.watchPosition(function positionSuccess(position) {
+            const pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
@@ -36,8 +36,10 @@ function initMap() {
             $.get("/api/locations", function (data) {
                 for (let i = 0; i < data.length; i++) {
                 let latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
+
+                // If user is within 100 units of saved location then the names of friends that are saved for
+                // that area are displayed in the div 'locationDetails'
                 if(checkDistance(pos, latLng)) {
-                    console.log(data[i]);
                     $("#locationDetails").empty();
                     let foundData = $("<div class='foundData'>");
                     for(let j = 0; j < data[i].People.length; j++) {
@@ -48,6 +50,8 @@ function initMap() {
                         foundData.append(info);
                     }
                     $("#locationDetails").append(foundData);
+
+                    // Opens a modal with more information on the friend if the friend's name is clicked.
                     $(".moreInfo").on("click", function(){
                         let person = $(".moreInfo").data();
                         let title = $("<h5>");
@@ -60,9 +64,6 @@ function initMap() {
                         $('.modal').modal();
                     });
                 }
-                // else {
-                //     $("#locationDetails").empty();
-                // };
         }
     });
         }, function () {
@@ -82,6 +83,9 @@ function getLocations() {
             placeMarker(latLng, map);
             let newRow = $("<tr>");
             newRow.text(data[i].locationName);
+            let btn = $("<a class='btn-floating btn-small waves-effect waves-light'><i class='material-icons'>group</i></a>");
+            btn.attr("value", data[i].id);
+            newRow.append(btn);
             $("#locationsTable > tbody").append(newRow);
         }
     });
@@ -89,11 +93,11 @@ function getLocations() {
 
 // The function that places a marker at the user's saved locations.
 function placeMarker(latLng, map) {
-    let marker = new google.maps.Marker({
+    const marker = new google.maps.Marker({
         position: latLng,
         map: map
     });
-    let circle = new google.maps.Circle({
+    const circle = new google.maps.Circle({
         map: map,
         radius: 100,
         fillColor: '#AA0000'
@@ -103,8 +107,8 @@ function placeMarker(latLng, map) {
 
 // Computes to see if the user is located within 100 units of one of their saved locations.
 function checkDistance(userLocation, markerLocation) {
-    let userCoords = new google.maps.LatLng(userLocation.lat, userLocation.lng);
-    let markerCoords = new google.maps.LatLng(markerLocation.lat, markerLocation.lng);
+    const userCoords = new google.maps.LatLng(userLocation.lat, userLocation.lng);
+    const markerCoords = new google.maps.LatLng(markerLocation.lat, markerLocation.lng);
     if (google.maps.geometry.spherical.computeDistanceBetween(userCoords, markerCoords) <= 100) {
         return true;
     }
