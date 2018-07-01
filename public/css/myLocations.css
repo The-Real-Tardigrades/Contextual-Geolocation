@@ -4,10 +4,14 @@
 }
 
 #map {
-  border-style: groove;
-  border-color: rgb(0, 0, 0);
-  height: 80%;
-  width: 100%;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: rgba(255, 255, 255, 0.8);
+    height: 80%;
+    width: 100%;
+    border-style: solid;
 }
 
 .main {
@@ -20,11 +24,11 @@
 
 html,
 body {
-height: 100%;
-margin: 0;
-padding: 0;
-background-image: url("/images/maps.jpg");
-background-position: bottom center;  
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("/images/maps.jpg");
+    background-position: bottom center;
     background-repeat: no-repeat;
     background-size: 50%;
     background-attachment: fixed;
@@ -39,7 +43,7 @@ background-position: bottom center;
 }
 
 .inThisArea h5 {
-    background-color: #f4b642;
+    background-color: rgb(69, 126, 248);
     text-align: center;
     font-weight: bold;
     border: solid 1px black;
@@ -49,4 +53,13 @@ background-position: bottom center;
     background-color: rgb(69, 126, 248);
     margin-bottom: 10px;
     margin-top: 10px;
+}
+
+#locationContainer {
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: rgba(255, 255, 255, 0.8);
+    font-family: 'Jura', sans-serif;
 }

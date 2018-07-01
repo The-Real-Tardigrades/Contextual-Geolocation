@@ -3,11 +3,6 @@
     font-family: 'Jura', sans-serif;
 }
 
-.btn-color {
-    background-color: rgb(69, 126, 248);
-}
-
-
 .intro {
     text-align: center;
     margin-top: 20px;
@@ -54,10 +49,17 @@ body, html {
 
 .container {
     border-radius: 5px;
-    background-color: #ffffff;
     padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: rgba(255, 255, 255, 0.8);
     font-family: 'Jura', sans-serif;
    
+}
+
+#deleteButton {
+    background-color: rgb(69, 126, 248);
+}
+
+.color {
+    background-color: rgb(69, 126, 248); 
 }

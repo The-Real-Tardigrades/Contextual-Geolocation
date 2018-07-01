@@ -14,9 +14,7 @@
     background-color: rgb(69, 126, 248);
 }
 
-body, html {
-    height: 100%;
-}
+
 
 .bg {
     background-image: url("/images/maps.jpg");
