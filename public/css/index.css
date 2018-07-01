@@ -24,3 +24,7 @@
     background-size: 50%;
     background-attachment: fixed;
 }
+
+#logo {
+    font-size: 25px;
+}

@@ -63,3 +63,7 @@ body, html {
 .color {
     background-color: rgb(69, 126, 248); 
 }
+
+#logo {
+    font-size: 25px;
+}
