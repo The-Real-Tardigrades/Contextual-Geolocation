@@ -42,8 +42,8 @@ function initMap() {
                 // that area are displayed in the div 'locationDetails'
                 if(checkDistance(pos, latLng)) {
                     $("#locationDetails").empty();
-                    let foundData = $("<div class='foundData'>");
-                    let savedLocation = $("<h6>");
+                    const foundData = $("<div class='foundData'>");
+                    const savedLocation = $("<h6>");
                     for(let j = 0; j < data[i].People.length; j++) {
                         savedLocation.text(data[i].locationName);
                         let personObj = data[i].People[j];
@@ -58,13 +58,13 @@ function initMap() {
                     // Opens a modal with more information on the friend if the friend's name is clicked.
                     $(".moreInfo").on("click", function(){
                         $(".modal-content").empty();
-                        let person = $(this).data();
+                        const person = $(this).data();
                         console.log(person);
-                        let title = $("<h5>");
+                        const title = $("<h5>");
                         title.text(person.firstName + " " + person.lastName);
-                        let nickName = $("<p>").text("Nickname: " + person.nickname);
-                        let jobrole = $("<p>").text("Role: " + person.role);
-                        let notesOnPerson = $("<p>").text("Notes: " + person.notes);
+                        const nickName = $("<p>").text("Nickname: " + person.nickname);
+                        const jobrole = $("<p>").text("Role: " + person.role);
+                        const notesOnPerson = $("<p>").text("Notes: " + person.notes);
                         $(".modal-content").append(title).append(nickName).append(jobrole).append(notesOnPerson);
                         
                         $('#personInfo').modal();
@@ -100,9 +100,9 @@ function getLocations() {
 // When user clicks on friend symbol next to locatin name, a list of friends saved in that location pops up.
 $(document).on("click", ".listFriends", function () {
     $(".modal-content").empty();
-    var locationData = $(this).data();
-    var people = locationData.People;
-    let title = $("<h5>");
+    const locationData = $(this).data();
+    const people = locationData.People;
+    const title = $("<h5>");
     title.text(locationData.locationName);
     $(".modal-content").append(title);
     for(let i = 0; i < people.length; i++) {

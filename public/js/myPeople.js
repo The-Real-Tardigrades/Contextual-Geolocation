@@ -1,6 +1,7 @@
 $(document).ready(function () {
+    // Fill table with all saved friends of the user
     displayAllPeople();
-    let locationSelect = $("#selectLocation");
+    const locationSelect = $("#selectLocation");
     getLocations();
     $('select').formSelect();
     $('.sidenav').sidenav();
@@ -12,12 +13,12 @@ $(document).ready(function () {
     function getLocations() {
         $.get("/api/locations", renderLocationList);
     }
-    // Function to either render a list of locations
+    // Function to render a list of locations
     function renderLocationList(data) {
         const chooseRow = $("<option value='' disabled selected>");
         chooseRow.text("Filter by Location");
         const allOption = $("<option>").text("All");
-        let rowsToAdd = [];
+        const rowsToAdd = [];
         for (let i = 0; i < data.length; i++) {
             rowsToAdd.push(createLocationRow(data[i]));
         }
@@ -30,7 +31,7 @@ $(document).ready(function () {
 
     // Creates the location options in the dropdown
     function createLocationRow(location) {
-        let listOption = $("<option>");
+        const listOption = $("<option>");
         listOption.attr("value", location.id);
         listOption.data(location);
         listOption.text(location.locationName);
@@ -50,15 +51,15 @@ $(document).ready(function () {
     });
 
     function renderTable(data) {
-        let people = data.People;
+        const people = data.People;
         people.forEach(function (person) {
-            let newRow = $("<tr>");
-            let firstName = $("<td>").text(person.firstName);
-            let lastName = $("<td>").text(person.lastName);
-            let nickname = $("<td>").text(person.nickname);
-            let role = $("<td>").text(person.role);
-            let notes = $("<td>").text(person.notes);
-            let location = $("<td>").text(data.locationName);
+            const newRow = $("<tr>");
+            const firstName = $("<td>").text(person.firstName);
+            const lastName = $("<td>").text(person.lastName);
+            const nickname = $("<td>").text(person.nickname);
+            const role = $("<td>").text(person.role);
+            const notes = $("<td>").text(person.notes);
+            const location = $("<td>").text(data.locationName);
             $("#peopleTable > tbody").append(newRow.append(firstName).append(lastName).append(nickname).append(role).append(notes).append(location));
         });
     };
@@ -69,13 +70,13 @@ $(document).ready(function () {
 function displayAllPeople() {
     $.get("/api/people", function renderAllPeople(data) {
         data.forEach(function (person) {
-            let newRow = $("<tr>");
-            let firstName = $("<td>").text(person.firstName);
-            let lastName = $("<td>").text(person.lastName);
-            let nickname = $("<td>").text(person.nickname);
-            let role = $("<td>").text(person.role);
-            let notes = $("<td>").text(person.notes);
-            let location = $("<td>").text(person.Location.locationName);
+            const newRow = $("<tr>");
+            const firstName = $("<td>").text(person.firstName);
+            const lastName = $("<td>").text(person.lastName);
+            const nickname = $("<td>").text(person.nickname);
+            const role = $("<td>").text(person.role);
+            const notes = $("<td>").text(person.notes);
+            const location = $("<td>").text(person.Location.locationName);
             $("#peopleTable > tbody").append(newRow.append(firstName).append(lastName).append(nickname).append(role).append(notes).append(location));
         });
     });

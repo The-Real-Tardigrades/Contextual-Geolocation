@@ -1,9 +1,12 @@
 let map, infoWindow, marker;
 $(document).ready(function() {
     $('.sidenav').sidenav();
+
+    // When user adds a location, the location gets saved to /api/locations and a modal pops up
+    // letting the user know that the location has been saved
     $("#submit").on("click", function (){
         
-        let newLocation = {
+        const newLocation = {
             locationName: $("#newLocation").val().trim(),
             latitude: marker.getPosition().lat(),
             longitude: marker.getPosition().lng(),
@@ -20,6 +23,7 @@ $(document).ready(function() {
     });
   });
 
+// Initialize google maps
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: 41.850033, lng: -87.6500523 },
@@ -33,10 +37,10 @@ function initMap() {
     });
 
     $("#findMe").on("click", function () {
-        // Try HTML5 geolocation.
+        // Use HTML5 geolocation to locate user if they click the find my location button.
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
-                let pos = {
+                const pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
@@ -56,6 +60,7 @@ function initMap() {
     });
 };
 
+// Function to place marker where user clicks
 function placeMarker(latLng, map) {
     if (marker === undefined){
         marker = new google.maps.Marker({
@@ -66,7 +71,8 @@ function placeMarker(latLng, map) {
     else {
         marker.setPosition(latLng);
     }
-    let circle = new google.maps.Circle({
+    // Bind a circle to the marker that is placed by user so they can see the radius of the location they are saving
+    const circle = new google.maps.Circle({
         map: map,
         radius: 100,
         fillColor: '#AA0000'
