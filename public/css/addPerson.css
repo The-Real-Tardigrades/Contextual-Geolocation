@@ -34,17 +34,9 @@ body, html {
     resize: vertical;
 }
 
-.input[type=submit] {
-    background-color: rgb(253, 253, 253);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
+.btn {
+    background-color: rgb(69, 126, 248);
     cursor: pointer;
-}
-
-.input[type=submit]:hover {
-    background-color: #45a049;
 }
 
 .container {
@@ -54,10 +46,6 @@ body, html {
     background: rgba(255, 255, 255, 0.8);
     font-family: 'Jura', sans-serif;
    
-}
-
-#deleteButton {
-    background-color: rgb(69, 126, 248);
 }
 
 .color {

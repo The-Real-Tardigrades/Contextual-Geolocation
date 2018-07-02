@@ -64,6 +64,25 @@ body {
     font-family: 'Jura', sans-serif;
 }
 
+.modal {
+    font-family: 'Jura', sans-serif;
+}
+
+.modal h5 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.modal a {
+    background-color: rgb(69, 126, 248);
+}
+
+.listFriends {
+    background-color: rgb(69, 126, 248);
+    float: right;
+    margin-top: 2px;
+}
+
 #logo {
     font-size: 25px;
 }

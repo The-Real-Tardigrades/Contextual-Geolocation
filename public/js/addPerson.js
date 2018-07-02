@@ -40,14 +40,16 @@ $(document).ready(function () {
     }
     // Function to either render a list of locations
     function renderLocationList(data) {
+        $('select').empty();
+        const chooseRow = $("<option value='' disabled selected>");
+        chooseRow.text("Choose a Location");
         let rowsToAdd = [];
         for (let i = 0; i < data.length; i++) {
             rowsToAdd.push(createLocationRow(data[i]));
         }
         locationSelect.empty();
-        console.log(rowsToAdd);
-        console.log(locationSelect);
         locationSelect.append(rowsToAdd);
+        locationSelect.prepend(chooseRow);
         $('select').formSelect();
     }
 

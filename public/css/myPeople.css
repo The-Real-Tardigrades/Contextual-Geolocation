@@ -31,6 +31,17 @@ h1 {
     font-family: 'Jura', sans-serif;
 }
 
+.btn {
+    margin-left: 10px;
+    background-color:  rgb(69, 126, 248);
+    margin-bottom: 10px;
+}
+
+.searchMenu {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 #logo {
     font-size: 25px;
 }
