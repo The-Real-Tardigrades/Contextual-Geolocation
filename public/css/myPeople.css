@@ -42,5 +42,6 @@ h1 {
     padding-right: 15px;
 }
 
-.searchMenu select {
+#logo {
+    font-size: 25px;
 }

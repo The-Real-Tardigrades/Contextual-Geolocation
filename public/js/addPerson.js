@@ -21,7 +21,11 @@ $(document).ready(function () {
             $("#showAdded").text("'" + data.firstName + "' has been added to your circle.");
             console.log(data);
         });
-        $("#newPerson").val("");
+        $("#firstName").val("");
+        $("#lastName").val("");
+        $("#nickname").val("");
+        $("#job").val("");
+        $("#notes").val("");
         $('.modal').modal();
     });
     $(".dropdown-trigger").dropdown({
