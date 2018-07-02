@@ -54,7 +54,7 @@ body {
 }
 
 .card {
-    background: #f4b642;
+    background: #ffffff;
     border-radius: 5px;
     background-color: #ffffff;
     padding: 20px;
@@ -65,4 +65,8 @@ body {
 .card label {
     color: black;
     opacity: 0.5;
+}
+
+#logo {
+    font-size: 25px;
 }
