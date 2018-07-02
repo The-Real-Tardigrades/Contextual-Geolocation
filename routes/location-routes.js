@@ -13,14 +13,11 @@ module.exports = function(app) {
   });
 
   app.get("/api/locations/:id", function(req, res) {
-    // Here we add an "include" property to our options in our findOne query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Post
-    db.Location.findOne({
+    db.Locations.findOne({
       where: {
         id: req.params.id
       },
-      include: [db.Post]
+      include: [db.People]
     }).then(function(dbLocation) {
       res.json(dbLocation);
     });
@@ -33,7 +30,7 @@ module.exports = function(app) {
   });
 
   app.delete("/api/locations/:id", function(req, res) {
-    db.Location.destroy({
+    db.Locations.destroy({
       where: {
         id: req.params.id
       }

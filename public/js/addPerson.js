@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     let locationSelect = $("#selectLocation");
     getLocations();
     $('select').formSelect();
@@ -7,7 +7,7 @@ $(document).ready(function() {
         hover: true
     });
 
-    $("#submitButton").on("click", function () {
+    $("#submit").on("click", function () {
         event.preventDefault();
         let newPerson = {
             firstName: $("#firstName").val().trim(),
@@ -18,9 +18,17 @@ $(document).ready(function() {
             LocationId: locationSelect.val()
         }
         $.post("/api/people", newPerson).then(function (data) {
+            $("#showAdded").text("'" + data.firstName + "' has been added to your circle.");
             console.log(data);
-        })
+        });
+        $("#newPerson").val("");
+        $('.modal').modal();
     });
+    $(".dropdown-trigger").dropdown({
+        hover: true
+    });
+
+
 
     // A function to get Locations and then render our list of Locations
     function getLocations() {
@@ -28,14 +36,16 @@ $(document).ready(function() {
     }
     // Function to either render a list of locations
     function renderLocationList(data) {
+        $('select').empty();
+        const chooseRow = $("<option value='' disabled selected>");
+        chooseRow.text("Choose a Location");
         let rowsToAdd = [];
         for (let i = 0; i < data.length; i++) {
             rowsToAdd.push(createLocationRow(data[i]));
         }
         locationSelect.empty();
-        console.log(rowsToAdd);
-        console.log(locationSelect);
         locationSelect.append(rowsToAdd);
+        locationSelect.prepend(chooseRow);
         $('select').formSelect();
     }
 

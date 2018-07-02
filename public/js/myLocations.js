@@ -4,6 +4,7 @@ $(document).ready(function() {
     $(".dropdown-trigger").dropdown( {
         hover: true
     });
+    $(".modal").modal();
 });
 
 // Initialize the google map.
@@ -42,18 +43,23 @@ function initMap() {
                 if(checkDistance(pos, latLng)) {
                     $("#locationDetails").empty();
                     let foundData = $("<div class='foundData'>");
+                    let savedLocation = $("<h6>");
                     for(let j = 0; j < data[i].People.length; j++) {
+                        savedLocation.text(data[i].locationName);
                         let personObj = data[i].People[j];
                         let info = $("<a class='waves-effect waves-light btn modal-trigger moreInfo' href='#personInfo'>").
-                        text(data[i].People[j].firstName + " " + data[i].People[j].lastName + " - " + data[i].People[j].role);
+                        text(personObj.firstName + " " + personObj.lastName + " - " + personObj.role);
                         info.data(personObj);
                         foundData.append(info);
                     }
+                    foundData.prepend(savedLocation);
                     $("#locationDetails").append(foundData);
 
                     // Opens a modal with more information on the friend if the friend's name is clicked.
                     $(".moreInfo").on("click", function(){
-                        let person = $(".moreInfo").data();
+                        $(".modal-content").empty();
+                        let person = $(this).data();
+                        console.log(person);
                         let title = $("<h5>");
                         title.text(person.firstName + " " + person.lastName);
                         let nickName = $("<p>").text("Nickname: " + person.nickname);
@@ -61,7 +67,7 @@ function initMap() {
                         let notesOnPerson = $("<p>").text("Notes: " + person.notes);
                         $(".modal-content").append(title).append(nickName).append(jobrole).append(notesOnPerson);
                         
-                        $('.modal').modal();
+                        $('#personInfo').modal();
                     });
                 }
         }
@@ -83,13 +89,28 @@ function getLocations() {
             placeMarker(latLng, map);
             let newRow = $("<tr>");
             newRow.text(data[i].locationName);
-            let btn = $("<a class='btn-floating btn-small waves-effect waves-light'><i class='material-icons'>group</i></a>");
-            btn.attr("value", data[i].id);
+            let btn = $("<a class='btn-small waves-effect waves-light listFriends modal-trigger' href='#personInfo'><i class='material-icons'>group</i></a>");
+            btn.data(data[i]);
             newRow.append(btn);
             $("#locationsTable > tbody").append(newRow);
         }
     });
 }
+
+// When user clicks on friend symbol next to locatin name, a list of friends saved in that location pops up.
+$(document).on("click", ".listFriends", function () {
+    $(".modal-content").empty();
+    var locationData = $(this).data();
+    var people = locationData.People;
+    let title = $("<h5>");
+    title.text(locationData.locationName);
+    $(".modal-content").append(title);
+    for(let i = 0; i < people.length; i++) {
+        let info = $("<p>").text(people[i].firstName + " " + people[i].lastName + " - " + people[i].role);
+        $(".modal-content").append(info);
+    }
+    $("#locationInfo").modal();
+});
 
 // The function that places a marker at the user's saved locations.
 function placeMarker(latLng, map) {
@@ -115,4 +136,3 @@ function checkDistance(userLocation, markerLocation) {
     
     return false;
 }
-
