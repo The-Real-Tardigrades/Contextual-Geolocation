@@ -18,7 +18,7 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="/" class="brand-logo">Circle of Friends</a>
+            <a href="/" class="brand-logo" id="logo">Circle of Friends</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
             </a>
@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="trigger" href="/" data-target="myLocationsdropdown">About Us
+                    <a class="trigger" href="/aboutUs" data-target="myLocationsdropdown">About Us
                         <i class="material-icons right">group</i>
                     </a>
                 </li>
@@ -66,32 +66,51 @@
     </nav>
     <ul class="sidenav" id="mobile-demo">
         <li>
-            <a href="/">Home</a>
+            <a href="/">
+                <i class="material-icons prefix">home</i>Home</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/locations">My Locations</a>
+            <a href="/locations">
+                <i class="material-icons prefix">location_on</i>My Locations</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="add/location">Add/Edit Locations</a>
+            <a href="add/location">
+                <i class="material-icons prefix">add_location</i>Add/Edit Locations</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/people">My People</a>
+            <a href="/people">
+                <i class="material-icons prefix">person</i>My People</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/add/person">Add/Edit People</a>
+            <a href="/add/person">
+                <i class="material-icons prefix">person_add</i>Add/Edit People</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/aboutUs">About Us</a>
+            <a href="/aboutUs">
+                <i class="material-icons prefix">group</i>About Us</a>
         </li>
     </ul>
 
 
     <div id="personInfo" class="modal">
-            <div class="modal-content">
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-            </div>
+        <div class="modal-content">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <div id="locationInfo" class="modal">
+        <div class="modal-content">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
     </div>
 
     <div class="row main">
@@ -106,7 +125,7 @@
             <table id="locationsTable">
                 <thead>
                     <tr>
-                        <th>Location Name</th>
+                        <th>All Locations</th>
                     </tr>
                 </thead>
                 <tbody></tbody>

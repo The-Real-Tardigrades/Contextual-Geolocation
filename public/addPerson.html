@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Add friends to Circle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/css/addPerson.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/addPerson.css">
     <!--Added font-family cdn-->
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
 </head>
@@ -16,7 +16,7 @@
 <body class="bg">
     <nav>
         <div class="nav-wrapper">
-            <a href="/" class="brand-logo">Circle of Friends</a>
+            <a href="/" class="brand-logo" id="logo">Circle of Friends</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
             </a>
@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="trigger" href="/" data-target="myLocationsdropdown">About Us
+                    <a class="trigger" href="/aboutUs" data-target="myLocationsdropdown">About Us
                         <i class="material-icons right">group</i>
                     </a>
                 </li>
@@ -64,22 +64,33 @@
     </nav>
     <ul class="sidenav" id="mobile-demo">
         <li>
-            <a href="/">Home</a>
+            <a href="/">
+                <i class="material-icons prefix">home</i>Home</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/locations">My Locations</a>
+            <a href="/locations">
+                <i class="material-icons prefix">location_on</i>My Locations</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="add/location">Add/Edit Locations</a>
+            <a href="add/location">
+                <i class="material-icons prefix">add_location</i>Add/Edit Locations</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/people">My People</a>
+            <a href="/people">
+                <i class="material-icons prefix">person</i>My People</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/add/person">Add/Edit People</a>
+            <a href="/add/person">
+                <i class="material-icons prefix">person_add</i>Add/Edit People</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/aboutUs">About Us</a>
+            <a href="/aboutUs">
+                <i class="material-icons prefix">group</i>About Us</a>
         </li>
     </ul>
 
@@ -118,17 +129,27 @@
             <label for="notes">Notes</label>
             <textarea id="notes" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-                <button class="btn waves-effect waves-light" type="submit" id="submitButton">Submit
-                    <i class="material-icons right">send</i>
-                </button>
-
-                <button class="btn waves-effect waves-light" type="submit" id="deleteButton">Discard
-                    <i class="material-icons right">delete</i>
-                </button>
+            <!--EDITING-->
+            <a id='submit' class="btn waves-effect waves-light modal-trigger" class="color"
+                href="#modal1">
+                <i class="material-icons right">send</i>Submit</a>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>New Friend Added!</h4>
+                    <p id="showAdded"></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/people" class="modal-close waves-effect waves-green btn-flat">See My People</a>
+                    <a href="#" class="modal-close waves-effect waves-green btn-flat">Add Another Friend</a>
+                </div>
+            </div>
+            <!--EDITING-->
+            <button class="btn waves-effect waves-light" type="submit" id="deleteButton">Discard
+                <i class="material-icons right">delete</i>
+            </button>
         </form>
     </div>
-    
-    
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

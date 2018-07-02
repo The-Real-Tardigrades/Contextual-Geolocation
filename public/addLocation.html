@@ -17,7 +17,7 @@
 <body class="bg">
     <nav>
         <div class="nav-wrapper">
-            <a href="/" class="brand-logo">Circle of Friends</a>
+            <a href="/" class="brand-logo" id="logo">Circle of Friends</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger">
                 <i class="material-icons">menu</i>
             </a>
@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="trigger" href="/" data-target="myLocationsdropdown">About Us
+                    <a class="trigger" href="/aboutUs" data-target="myLocationsdropdown">About Us
                         <i class="material-icons right">group</i>
                     </a>
                 </li>
@@ -65,22 +65,33 @@
     </nav>
     <ul class="sidenav" id="mobile-demo">
         <li>
-            <a href="/">Home</a>
+            <a href="/">
+                <i class="material-icons prefix">home</i>Home</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/locations">My Locations</a>
+            <a href="/locations">
+                <i class="material-icons prefix">location_on</i>My Locations</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="add/location">Add/Edit Locations</a>
+            <a href="add/location">
+                <i class="material-icons prefix">add_location</i>Add/Edit Locations</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/people">My People</a>
+            <a href="/people">
+                <i class="material-icons prefix">person</i>My People</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/add/person">Add/Edit People</a>
+            <a href="/add/person">
+                <i class="material-icons prefix">person_add</i>Add/Edit People</a>
         </li>
+        <li class="divider"></li>
         <li>
-            <a href="/aboutUs">About Us</a>
+            <a href="/aboutUs">
+                <i class="material-icons prefix">group</i>About Us</a>
         </li>
     </ul>
 
@@ -97,9 +108,11 @@
                     </div>
                     <p class="step">Step Two:</p>
                     <p>Place a marker on the map at the location you want to save. (You can move the marker around before submitting)</p>
-                    <a id='findMe' class="waves-effect waves-light btn-large"><i class="material-icons right">location_searching</i>Find My Current Location</a>
+                    <a id='findMe' class="waves-effect waves-light btn-large">
+                        <i class="material-icons right">my_location</i>Find My Current Location</a>
                     <p class="step">Step Three:</p>
-                    <a id='submit' class="waves-effect waves-light btn-large modal-trigger" href="#modal1"><i class="material-icons right">send</i>Submit</a>
+                    <a id='submit' class="waves-effect waves-light btn-large modal-trigger" href="#modal1">
+                        <i class="material-icons right">send</i>Submit</a>
                     <div id="modal1" class="modal">
                         <div class="modal-content">
                             <h4>New Location Added!</h4>
@@ -120,11 +133,12 @@
 
 
 
-    <script src="/js/addLocation.js"></script>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY4Yg9O63QZOIF726F2IWsBNosiegpv9M&callback=initMap&libraries=geometry"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <script src="/js/addLocation.js"></script>
 </body>
 
 </html>
