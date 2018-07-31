@@ -22,11 +22,14 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Locations.associate = function(models) {
-        // Associating Author with Posts
-        // When an Author is deleted, also delete any associated Posts
-        Locations.hasMany(models.People, {
-          onDelete: "cascade"
-        });
-      };
+      Locations.hasMany(models.People, {
+        onDelete: "cascade"
+      });
+      Locations.belongsTo(models.User, {
+        foreignKey: {
+          allowNull: true
+        }
+      });
+    };
     return Locations;
 };

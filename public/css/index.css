@@ -33,3 +33,12 @@ video {
   
   }
 
+.hidden {
+    opacity: 0;
+}
+
+.input-field {
+    width: 25%;
+    margin: auto;
+    margin-top: 25px;
+}
