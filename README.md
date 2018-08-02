@@ -1,8 +1,7 @@
 Circle of Friends
 
 Technologies:
-
-Circle of Friends utilized MySql database to store a contact list and geolocation of pins placed on the map. The framework Express was used with Node.js for user requests. We used Materialize CSS for design and ran Nightmare tests for efficiency.
+MySql. Javascript/jQuery. HTML/CSS Materialize. Express & Node.js.
 
 The Why:
 
