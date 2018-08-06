@@ -20,13 +20,5 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
-
-    Locations.associate = function(models) {
-        // Associating Author with Posts
-        // When an Author is deleted, also delete any associated Posts
-        Locations.hasMany(models.People, {
-          onDelete: "cascade"
-        });
-      };
     return Locations;
 };

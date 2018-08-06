@@ -39,7 +39,6 @@ $(document).ready(function () {
 
     $("#submit").on("click", function() {
         const location = locationSelect.val();
-        console.log(location);
         $("tbody").empty();
         if(location === "All" || location === null) {
             displayAllPeople();

@@ -5,6 +5,11 @@ $(document).ready(function() {
         hover: true
     });
     $(".modal").modal();
+
+    const username = localStorage.getItem("username")
+
+    $.get("/api/users/" + username)
+    .then(res => console.log(res));
 });
 
 // Initialize the google map.
@@ -83,14 +88,14 @@ function initMap() {
 
 // Get all of the user's saved locations and place markers on the map for each location.
 function getLocations() {
-    $.get("/api/locations", function (data) {
-        for (let i = 0; i < data.length; i++) {
-            let latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
+    $.get("/api/users/" + localStorage.getItem("username"), function (data) {
+        for (let i = 0; i < data.Locations.length; i++) {
+            let latLng = { lat: Number(data.Locations[i].latitude), lng: Number(data.Locations[i].longitude) };
             placeMarker(latLng, map);
             let newRow = $("<tr>");
-            newRow.text(data[i].locationName);
+            newRow.text(data.Locations[i].locationName);
             let btn = $("<a class='btn-small waves-effect waves-light listFriends modal-trigger' href='#personInfo'><i class='material-icons'>group</i></a>");
-            btn.data(data[i]);
+            btn.data(data.Locations[i]);
             newRow.append(btn);
             $("#locationsTable > tbody").append(newRow);
         }
