@@ -4,12 +4,14 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Add friends to Circle</title>
+    <title>Circle of Friends</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/addPerson.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <!--Added font-family cdn-->
     <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+
 </head>
 
 <body class="bg">
@@ -20,11 +22,6 @@
                 <i class="material-icons">menu</i>
             </a>
             <ul class="right hide-on-med-and-down">
-                <li>
-                    <a class="trigger" href="/" data-target="myLocationsdropdown">Home
-                        <i class="material-icons right">home</i>
-                    </a>
-                </li>
                 <li>
                     <a class="dropdown-trigger" href="#!" data-target="myLocationsdropdown">My Locations
                         <i class="material-icons right">arrow_drop_down</i>
@@ -73,7 +70,7 @@
         </li>
         <li class="divider"></li>
         <li>
-            <a href="/add/location">
+            <a href="add/location">
                 <i class="material-icons prefix">add_location</i>Add/Edit Locations</a>
         </li>
         <li class="divider"></li>
@@ -93,66 +90,29 @@
         </li>
     </ul>
 
-    <br>
-    <div class="container">
-        <h1>Add a Person</h1>
-        <form>
-            <div class="input-field col s4">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="firstName" type="text" class="validate">
-                <label for="firstName">First Name</label>
-            </div>
-            <div class="input-field col s4">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="lastName" type="text" class="validate">
-                <label for="lastName">Last Name</label>
-            </div>
-            <div class="input-field col s4">
-                <i class="material-icons prefix">account_circle</i>
-                <input id="nickname" type="text" class="validate">
-                <label for="nickname">Nickname</label>
-            </div>
-            <div class="input-field col s4">
-                <i class="material-icons prefix">assignment_ind</i>
-                <input id="job" type="text" class="validate">
-                <label for="job">Job Role</label>
-            </div>
-            <div class="input-field col s4">
-                <i class="material-icons prefix">location_on</i>
-                <select id="selectLocation">
-                    <option value="" disabled selected>Choose an option</option>
-                </select>
-                <label>Associate to Location</label>
-            </div>
-
-            <label for="notes">Notes</label>
-            <textarea id="notes" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-            <a id='submit' class="btn waves-effect waves-light modal-trigger" class="color" href="#modal1">
-                <i class="material-icons right">send</i>Submit</a></p>
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <h4>New Friend Added!</h4>
-                    <p id="showAdded">
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="username" type="text">
+                    <label for="username">Username</label>
                 </div>
-                <div class="modal-footer">
-                    <a href="/people" class="modal-close waves-effect waves-green btn-flat">See My People</a>
-                    <a href="#" class="modal-close waves-effect waves-green btn-flat">Add Another Friend</a>
+                <div class="input-field col s6">
+                    <input id="password" type="password">
+                    <label for="password">Password</label>
                 </div>
             </div>
-
-            <button class="btn waves-effect waves-light" type="submit" id="deleteButton">Discard
-                <i class="material-icons right">delete</i>
-            </button>
+            <a class="waves-effect waves-light btn" id="login">Login</a>
+            <a class="waves-effect waves-light btn" id="register">Register</a>
         </form>
     </div>
-
-
+  
+   
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/js/addPerson.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
 </body>
 
 </html>
