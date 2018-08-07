@@ -13,6 +13,7 @@ $(document).ready(function() {
         $.post("/api/users", newUser).then(function (data) {
             localStorage.setItem("username", data.username);
             localStorage.setItem("userId", data.id);
+            window.location.href="/locations";
         });
     })
 
