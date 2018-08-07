@@ -1,13 +1,23 @@
 var db = require("../models");
 
 module.exports = function(app) {
-    app.get("/api/users/:username", function(req, res) {
+    app.get("/api/users/:id", function(req, res) {
         db.User.findOne({
             where: {
-                username: req.params.username
+                id: req.params.id
             },
             include: [db.Locations, db.People]
         }).then(function(dbUser){
+            res.json(dbUser);
+        });
+    });
+
+    app.get("/api/users/login/:username", function(req, res) {
+        db.User.findOne({
+            where: {
+                username: req.params.username
+            }
+        }).then(function(dbUser) {
             res.json(dbUser);
         });
     });

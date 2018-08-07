@@ -20,5 +20,9 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false
       }
     });
+    Locations.associate = function(models) {
+      Locations.belongsTo(models.User);
+      Locations.hasMany(models.People);
+  };
     return Locations;
 };

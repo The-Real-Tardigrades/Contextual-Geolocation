@@ -15,7 +15,8 @@ $(document).ready(function () {
             nickname: $("#nickname").val().trim(),
             role: $("#job").val().trim(),
             notes: $("#notes").val(),
-            LocationId: locationSelect.val()
+            LocationId: locationSelect.val(),
+            UserId: localStorage.getItem("userId")
         }
         $.post("/api/people", newPerson).then(function (data) {
             $("#showAdded").text("'" + data.firstName + "' has been added to your circle.");
@@ -36,7 +37,8 @@ $(document).ready(function () {
 
     // A function to get Locations and then render our list of Locations
     function getLocations() {
-        $.get("/api/locations", renderLocationList);
+        $.get("/api/users/" + localStorage.getItem("userId"))
+            .then(res => renderLocationList(res.Locations));
     }
     // Function to either render a list of locations
     function renderLocationList(data) {

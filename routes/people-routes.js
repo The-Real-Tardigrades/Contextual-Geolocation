@@ -38,7 +38,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Location]
+      include: [db.Locations]
     }).then(function(dbPeople) {
       res.json(dbPeople);
     });
