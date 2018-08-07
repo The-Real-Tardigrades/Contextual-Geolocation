@@ -19,7 +19,8 @@ $(document).ready(function () {
             nickname: $("#nickname").val().trim(),
             role: $("#job").val().trim(),
             notes: $("#notes").val(),
-            LocationId: locationSelect.val()
+            LocationId: locationSelect.val(),
+            UserId: localStorage.getItem("userId")
         }
 
         // Post new person to /api/people and have a modal pop up to let user know the person has been added
@@ -44,7 +45,8 @@ $(document).ready(function () {
 
     // A function to get Locations and then render our list of Locations
     function getLocations() {
-        $.get("/api/locations", renderLocationList);
+        $.get("/api/users/" + localStorage.getItem("userId"))
+            .then(res => renderLocationList(res.Locations));
     }
     // Function to either render a list of locations
     function renderLocationList(data) {

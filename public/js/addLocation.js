@@ -10,7 +10,8 @@ $(document).ready(function() {
             locationName: $("#newLocation").val().trim(),
             latitude: marker.getPosition().lat(),
             longitude: marker.getPosition().lng(),
-            radius: 100
+            radius: 100,
+            UserId: localStorage.getItem("userId")
         }
         $.post("/api/locations", newLocation).then(function (data) {
             $("#showUser").text("'" + data.locationName + "' has been added to your locations.");

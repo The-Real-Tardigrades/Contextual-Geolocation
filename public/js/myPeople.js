@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    // Fill table with all saved friends of the user
-    displayAllPeople();
-    const locationSelect = $("#selectLocation");
+    $.get("/api/users/" + localStorage.getItem("userId"))
+        .then(res => displayAllPeople(res.People,res.Locations));
+    let locationSelect = $("#selectLocation");
     getLocations();
     $('select').formSelect();
     $('.sidenav').sidenav();
@@ -11,7 +11,8 @@ $(document).ready(function () {
 
     // A function to get Locations and then render our list of Locations
     function getLocations() {
-        $.get("/api/locations", renderLocationList);
+        $.get("/api/users/" + localStorage.getItem("userId"))
+            .then(res => renderLocationList(res.Locations));
     }
     // Function to render a list of locations
     function renderLocationList(data) {
@@ -40,44 +41,45 @@ $(document).ready(function () {
 
     $("#submit").on("click", function() {
         const location = locationSelect.val();
-        console.log(location);
         $("tbody").empty();
         if(location === "All" || location === null) {
-            displayAllPeople();
+            $.get("/api/users/" + localStorage.getItem("userId"))
+                .then(res => displayAllPeople(res.People, res.Locations));
         }
         else {
-            $.get("/api/locations/" + location, renderTable);
+            $.get("/api/users/" + localStorage.getItem("userId"))
+                .then(res => {
+                    const people = res.People;
+                    const onesToDisplay = [];
+                    for(let i = 0; i < people.length; i++) {
+                        if(people[i].LocationId === parseInt(location)) {
+                            onesToDisplay.push(people[i]);
+                        }
+                    }
+                    displayAllPeople(onesToDisplay, res.Locations)}
+                );
         }
     });
-
-    function renderTable(data) {
-        const people = data.People;
-        people.forEach(function (person) {
-            const newRow = $("<tr>");
-            const firstName = $("<td>").text(person.firstName);
-            const lastName = $("<td>").text(person.lastName);
-            const nickname = $("<td>").text(person.nickname);
-            const role = $("<td>").text(person.role);
-            const notes = $("<td>").text(person.notes);
-            const location = $("<td>").text(data.locationName);
-            $("#peopleTable > tbody").append(newRow.append(firstName).append(lastName).append(nickname).append(role).append(notes).append(location));
-        });
-    };
 });
 
 
 // Retrieve all the stored information for people from database to display on page
-function displayAllPeople() {
-    $.get("/api/people", function renderAllPeople(data) {
-        data.forEach(function (person) {
-            const newRow = $("<tr>");
-            const firstName = $("<td>").text(person.firstName);
-            const lastName = $("<td>").text(person.lastName);
-            const nickname = $("<td>").text(person.nickname);
-            const role = $("<td>").text(person.role);
-            const notes = $("<td>").text(person.notes);
-            const location = $("<td>").text(person.Location.locationName);
-            $("#peopleTable > tbody").append(newRow.append(firstName).append(lastName).append(nickname).append(role).append(notes).append(location));
-        });
+function displayAllPeople(peopleArr, locationsArr) {
+    const locations = locationsArr;
+
+    peopleArr.forEach(function (person) {
+        let newRow = $("<tr>");
+        let firstName = $("<td>").text(person.firstName);
+        let lastName = $("<td>").text(person.lastName);
+        let nickname = $("<td>").text(person.nickname);
+        let role = $("<td>").text(person.role);
+        let notes = $("<td>").text(person.notes);
+        let location;
+        for (let i = 0; i < locations.length; i++) {
+            if (locations[i].id === person.LocationId) {
+                location = $("<td>").text(locations[i].locationName);
+            }
+        }
+        $("#peopleTable > tbody").append(newRow.append(firstName).append(lastName).append(nickname).append(role).append(notes).append(location));
     });
 }

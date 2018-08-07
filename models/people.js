@@ -33,13 +33,9 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   });
-
-  People.associate = function(models) {
-      People.belongsTo(models.Locations, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
-    };
-  return People;
+    People.associate = function(models) {
+      People.belongsTo(models.Locations);
+      People.belongsTo(models.User);
+  };
+    return People;
 };
