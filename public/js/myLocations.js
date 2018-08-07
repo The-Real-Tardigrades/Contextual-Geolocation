@@ -5,6 +5,7 @@ $(document).ready(function() {
         hover: true
     });
     $(".modal").modal();
+
 });
 
 // Initialize the google map.
@@ -34,9 +35,9 @@ function initMap() {
             // Checks to see if the user is located in one of their saved locations and if so, displays
             // the information the user has saved for that location.
             $("#locationDetails").empty();
-            $.get("/api/locations", function (data) {
-                for (let i = 0; i < data.length; i++) {
-                let latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
+            $.get("/api/users/" + localStorage.getItem("userId"), function (data) {
+                for (let i = 0; i < data.Locations.length; i++) {
+                let latLng = { lat: Number(data.Locations[i].latitude), lng: Number(data.Locations[i].longitude) };
 
                 // If user is within 100 units of saved location then the names of friends that are saved for
                 // that area are displayed in the div 'locationDetails'
@@ -44,9 +45,9 @@ function initMap() {
                     $("#locationDetails").empty();
                     let foundData = $("<div class='foundData'>");
                     let savedLocation = $("<h6>");
-                    for(let j = 0; j < data[i].People.length; j++) {
-                        savedLocation.text(data[i].locationName);
-                        let personObj = data[i].People[j];
+                    for(let j = 0; j < data.Locations[i].People.length; j++) {
+                        savedLocation.text(data.Locations[i].locationName);
+                        let personObj = data.Locations[i].People[j];
                         let info = $("<a class='waves-effect waves-light btn modal-trigger moreInfo' href='#personInfo'>").
                         text(personObj.firstName + " " + personObj.lastName + " - " + personObj.role);
                         info.data(personObj);
@@ -83,12 +84,13 @@ function initMap() {
 
 // Get all of the user's saved locations and place markers on the map for each location.
 function getLocations() {
-    $.get("/api/locations", function (data) {
-        for (let i = 0; i < data.length; i++) {
-            let latLng = { lat: Number(data[i].latitude), lng: Number(data[i].longitude) };
+    $.get("/api/users/" + localStorage.getItem("userId"), function (data) {
+        console.log(data);
+        for (let i = 0; i < data.Locations.length; i++) {
+            let latLng = { lat: Number(data.Locations[i].latitude), lng: Number(data.Locations[i].longitude) };
             placeMarker(latLng, map);
             let newRow = $("<tr>");
-            newRow.text(data[i].locationName);
+            newRow.text(data.Locations[i].locationName);
             let btn = $("<a class='btn-small waves-effect waves-light listFriends modal-trigger' href='#personInfo'><i class='material-icons'>group</i></a>");
             btn.data(data[i]);
             newRow.append(btn);

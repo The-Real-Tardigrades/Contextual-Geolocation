@@ -30,10 +30,11 @@ app.use(express.static("public"));
 require("./routes/html-routes.js")(app);
 require("./routes/location-routes.js")(app);
 require("./routes/people-routes.js")(app);
+require("./routes/user-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

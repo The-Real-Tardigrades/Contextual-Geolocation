@@ -89,24 +89,30 @@
                 <i class="material-icons prefix">group</i>About Us</a>
         </li>
     </ul>
-    <div class="intro">
-        <h1>Welcome to Circle of Friends</h1>
-        <p>Connecting you to the world.</p>
-        <div>
-                <video width="560" height="315" controls>
-                        <source src="/images/introvid.mp4" type="video/mp4">
-                      Your browser does not support the video tag.
-                      </video>
-        </div>
 
-        <a class="waves-effect waves-light btn-large" onclick="window.location.href='/login'">
-            <i class="material-icons left">public</i>Start</a>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="username" type="text">
+                    <label for="username">Username</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="password" type="password">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <a class="waves-effect waves-light btn" id="login">Login</a>
+            <a class="waves-effect waves-light btn" id="register">Register</a>
+        </form>
     </div>
+  
+   
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-    <script type="text/javascript" src="/js/home.js"></script>
+    <script type="text/javascript" src="/js/login.js"></script>
 </body>
 
 </html>
