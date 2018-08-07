@@ -60,7 +60,6 @@ function initMap() {
                     $(".moreInfo").on("click", function(){
                         $(".modal-content").empty();
                         const person = $(this).data();
-                        console.log(person);
                         const title = $("<h5>");
                         title.text(person.firstName + " " + person.lastName);
                         const nickName = $("<p>").text("Nickname: " + person.nickname);
@@ -85,7 +84,6 @@ function initMap() {
 // Get all of the user's saved locations and place markers on the map for each location.
 function getLocations() {
     $.get("/api/users/" + localStorage.getItem("userId"), function (data) {
-        console.log(data);
         for (let i = 0; i < data.Locations.length; i++) {
             let latLng = { lat: Number(data.Locations[i].latitude), lng: Number(data.Locations[i].longitude) };
             placeMarker(latLng, map);
