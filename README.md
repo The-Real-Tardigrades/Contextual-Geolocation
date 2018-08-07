@@ -1,8 +1,14 @@
-# Contextual-Geolocation
+# Circle of Friends
 
-### How The App Works
+## Technologies:
+MySql. Javascript/jQuery. HTML/CSS Materialize. Express & Node.js.
 
-This app uses HTML5 Geolocation, Google Maps API (along with the Geometry Library), Sequelize, and MySQL to keep track of the user's position relative to their saved locations. 
+## The Why:
 
-Users can save locations and then add people to those locations. If a user is positioned at a saved location they will be able to see all of the people (their names, nicknames, job/roles, and any notes the user has saved about them) relative to that location. When the user leaves a saved location, the contacts then disappear from the screen, but users can still see all of their saved locations at any time and see the people saved in those locations, even if they are not positioned at a saved location. View the video below to get a glimpse of how it works or check out https://circle-of-friends.herokuapp.com/ and try it for yourself. 
+Have you ever walked into the same store and see the same cashier? They always remember you and know all about your dog Spot and kids Tammy and Lawrence? With Circle of Friends, you can now store all your favorite people in your favorite locations. Never forget a person again! Add multiple contacts to a specific location. When you visit the pinned location, you can view who you know and start building your circle of friends.
 
+## The future:
+
+What we hope to improve in the coming months is to allow push notifications with who you know when you arrive to a pinned location. Making the app more mobile responsive.
+
+A deployed version can also be seen at: https://circle-of-friends.herokuapp.com/
