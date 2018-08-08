@@ -26,9 +26,11 @@ function initMap() {
                 lng: position.coords.longitude
             };
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('You are here');
-            infoWindow.open(map);
+            const marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                icon: '../images/bluepin.png'
+            });
             map.setCenter(pos);
             map.setZoom(15);
 
