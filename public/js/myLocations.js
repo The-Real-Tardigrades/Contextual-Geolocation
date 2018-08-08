@@ -93,7 +93,7 @@ function getLocations() {
             let newRow = $("<tr>");
             newRow.text(data.Locations[i].locationName);
             let btn = $("<a class='btn-small waves-effect waves-light listFriends modal-trigger' href='#personInfo'><i class='material-icons'>group</i></a>");
-            btn.data(data[i]);
+            btn.data(data.Locations[i]);
             newRow.append(btn);
             $("#locationsTable > tbody").append(newRow);
         }
@@ -103,15 +103,18 @@ function getLocations() {
 // When user clicks on friend symbol next to locatin name, a list of friends saved in that location pops up.
 $(document).on("click", ".listFriends", function () {
     $(".modal-content").empty();
-    const locationData = $(this).data();
-    const people = locationData.People;
+    const location = $(this).data();
     const title = $("<h5>");
-    title.text(locationData.locationName);
+    title.text(location.locationName);
     $(".modal-content").append(title);
-    for(let i = 0; i < people.length; i++) {
-        let info = $("<p>").text(people[i].firstName + " " + people[i].lastName + " - " + people[i].role);
-        $(".modal-content").append(info);
-    }
+    $.get("/api/users/" + localStorage.getItem("userId"), function (data) {
+        for(let i = 0; i < data.People.length; i++) {
+            if(data.People[i].LocationId === parseInt(location.id)) {
+            let info = $("<p>").text(data.People[i].firstName + " " + data.People[i].lastName + " - " + data.People[i].role);
+            $(".modal-content").append(info);
+            }
+        }
+    })
     $("#locationInfo").modal();
 });
 
