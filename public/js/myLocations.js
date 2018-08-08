@@ -45,13 +45,16 @@ function initMap() {
                     $("#locationDetails").empty();
                     let foundData = $("<div class='foundData'>");
                     let savedLocation = $("<h6>");
-                    for(let j = 0; j < data.Locations[i].People.length; j++) {
+                    let locationId = data.Locations[i].id;
+                    for(let j = 0; j < data.People.length; j++) {
                         savedLocation.text(data.Locations[i].locationName);
-                        let personObj = data.Locations[i].People[j];
-                        let info = $("<a class='waves-effect waves-light btn modal-trigger moreInfo' href='#personInfo'>").
-                        text(personObj.firstName + " " + personObj.lastName + " - " + personObj.role);
-                        info.data(personObj);
-                        foundData.append(info);
+                        if(data.People[j].LocationId === parseInt(locationId)) {
+                            let personObj = data.People[j];
+                            let info = $("<a class='waves-effect waves-light btn modal-trigger moreInfo' href='#personInfo'>").
+                            text(personObj.firstName + " " + personObj.lastName + " - " + personObj.role);
+                            info.data(personObj);
+                            foundData.append(info);
+                        }
                     }
                     foundData.prepend(savedLocation);
                     $("#locationDetails").append(foundData);
