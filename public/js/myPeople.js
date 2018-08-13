@@ -60,6 +60,11 @@ $(document).ready(function () {
                 );
         }
     });
+
+    $(document).on("click", ".edit", function() {
+        const personData = $(this).data();
+        window.location.href = '/add/person?person_id=' + personData.id;
+    });
 });
 
 
@@ -80,6 +85,7 @@ function displayAllPeople(peopleArr, locationsArr) {
                 location = $("<td>").text(locations[i].locationName);
             }
         }
-        $("#peopleTable > tbody").append(newRow.append(firstName).append(lastName).append(nickname).append(role).append(notes).append(location));
+        let editButton = $("<button class='btn waves-effect waves-light edit'>").text('Edit').data(person);
+        $("#peopleTable > tbody").append(newRow.append(firstName).append(lastName).append(nickname).append(role).append(notes).append(location).append(editButton));
     });
 }

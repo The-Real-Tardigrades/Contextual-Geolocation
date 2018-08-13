@@ -58,8 +58,8 @@ module.exports = function(app) {
   });
 
   // PUT route for updating people
-  app.put("/api/people", function(req, res) {
-    db.Post.update(
+  app.put("/api/people/:id", function(req, res) {
+    db.People.update(
       req.body,
       {
         where: {
