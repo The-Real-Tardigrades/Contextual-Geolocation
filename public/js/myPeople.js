@@ -63,7 +63,7 @@ $(document).ready(function () {
 
     $(document).on("click", ".edit", function() {
         const personData = $(this).data();
-        window.location.href = '/add/person?person_id=' + personData.id;
+        window.location.href = '/edit/person?person_id=' + personData.id;
     });
 });
 

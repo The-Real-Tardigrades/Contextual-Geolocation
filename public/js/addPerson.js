@@ -1,12 +1,4 @@
 $(document).ready(function () {
-    var url = window.location.search;
-    var personId;
-    var updating = false;
-
-    if (url.indexOf("?person_id=") !== -1) {
-        personId = url.split("=")[1];
-        getPersonData(personId);
-    }
 
     let locationSelect = $("#selectLocation");
     getLocations();
@@ -32,15 +24,8 @@ $(document).ready(function () {
             UserId: localStorage.getItem("userId")
         }
 
-        if(updating) {
-            newPerson.id = personId;
-            updatePerson(newPerson);
-        }
-
-        else {
-            submitPerson(newPerson);
-        };
-
+        submitPerson(newPerson);
+    
         // Clear the form after a person is added.
         $("#firstName").val("");
         $("#lastName").val("");
@@ -83,34 +68,7 @@ $(document).ready(function () {
         return listOption;
     }
 
-    // Gets person data for a person if we're editing
-    function getPersonData(id) {
-        $.get("/api/people/" + id, function(data) {
-        if (data) {
-            // If this person exists, prefill our form with its data
-            $("#firstName").val(data.firstName);
-            $("#lastName").val(data.lastName);
-            $("#nickname").val(data.nickname);
-            $("#job").val(data.role);
-            $("#notes").val(data.notes);
-            // If we have a person with this id, set a flag for us to know to update the person
-            // when we hit submit
-            updating = true;
-        }
-        });
-    }
-
-    function updatePerson(person) {
-        $.ajax({
-            method: "PUT",
-            url: "/api/people/" + personId,
-            data: person
-          })
-            .then(function() {
-                $("#showAdded").text("'" + person.firstName + "' has successfully been edited.");
-            });
-    }
-
+    // Function to submit new person and save them in database
     function submitPerson(person) {
         $.post("/api/people", person, function() {
             $("#showAdded").text("'" + person.firstName + "' has been added to your circle.");

@@ -39,6 +39,11 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/addPerson.html"));
   });
 
+  // Route to page to edit a person
+  app.get("/edit/person", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/editPerson.html"));
+  });
+
   // Route to the About Us page
   app.get("/aboutUs", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/aboutUs.html"));
