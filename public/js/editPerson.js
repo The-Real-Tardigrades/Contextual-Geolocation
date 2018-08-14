@@ -48,7 +48,13 @@ $(document).ready(function () {
             $("#nickname").val(data.nickname);
             $("#role").val(data.role);
             $("#notes").val(data.notes);
-            $("#location").val(data.Location.locationName);
+            let locationOption = $("<option selected>");
+            locationOption.text(data.Location.locationName);
+            locationOption.attr("value", data.Location.locationName);
+            
+            $("#location").empty();
+            $("#location").append(locationOption);
+            $('select').formSelect();
         }
         });
     }

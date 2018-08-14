@@ -45,6 +45,7 @@ $(document).ready(function () {
         $.get("/api/users/" + localStorage.getItem("userId"))
             .then(res => renderLocationList(res.Locations));
     }
+    
     // Function to either render a list of locations
     function renderLocationList(data) {
         $('select').empty();
