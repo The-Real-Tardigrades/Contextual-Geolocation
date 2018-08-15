@@ -37,11 +37,32 @@ $(document).ready(function () {
         $('.modal').modal();
     });
 
+    $("#delete").on("click", function () {
+        event.preventDefault();
+        const personToDelete = {
+            firstName: $("#firstName").val().trim(),
+            lastName: $("#lastName").val().trim(),
+            nickname: $("#nickname").val().trim(),
+            role: $("#role").val().trim(),
+            notes: $("#notes").val(),
+            UserId: localStorage.getItem("userId")
+        }
+        personToDelete.id = personId;
+        deletePerson(personToDelete);
+
+         // Clear the form after a person is edited.
+         $("#firstName").val("");
+         $("#lastName").val("");
+         $("#nickname").val("");
+         $("#role").val("");
+         $("#notes").val("");
+         $('.modal').modal();
+    });
+
     // Gets person data for the one we are editing
     function getPersonData(id) {
         $.get("/api/people/" + id, function(data) {
         if (data) {
-            console.log(data);
             // If this person exists, prefill our form with its data
             $("#firstName").val(data.firstName);
             $("#lastName").val(data.lastName);
@@ -68,6 +89,18 @@ $(document).ready(function () {
         })
             .then(function() {
                 $("#showAdded").text("'" + person.firstName + "' has successfully been edited.");
+            });
+    }
+
+    // Function to delete person in database
+    function deletePerson(person) {
+        $.ajax({
+            method: "DELETE",
+            url: "/api/people/" + personId,
+            data: person
+        })
+            .then(function() {
+                $("#showAdded").text("'" + person.firstName + "' has successfully been deleted.");
             });
     }
 });
