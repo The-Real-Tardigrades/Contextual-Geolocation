@@ -1,0 +1,72 @@
+.nav-wrapper {
+    background-color: rgb(69, 126, 248);
+    font-family: 'Jura', sans-serif;
+}
+
+#map {
+    border-style: groove;
+    border-color: rgb(0, 0, 0);
+    height: 80%;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.waves-effect {
+    background-color: rgb(69, 126, 248);
+}
+
+.main {
+    width: 90%;
+    height: 100%;
+    margin-top: 30px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("/images/maps.jpg");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-attachment: fixed;
+}
+
+.step {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Jura', sans-serif;
+}
+
+.modal {
+    color: black;
+}
+
+#instructions {
+    font-family: 'Jura', sans-serif;
+    font-weight: bold;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.card label {
+    color: black;
+    opacity: 0.5;
+}
+
+#logo {
+    font-size: 25px;
+}

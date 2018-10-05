@@ -1,0 +1,44 @@
+.nav-wrapper {
+    background-color: rgb(69, 126, 248);
+    font-family: 'Jura', sans-serif;
+}
+
+.intro {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Jura', sans-serif;
+    font-size: 25px;
+}
+
+.waves-effect {
+    background-color: rgb(69, 126, 248);
+}
+
+
+
+.bg {
+    background-image: url("/images/maps.jpg");
+    height: 100%; 
+    background-position: bottom center;  
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-attachment: fixed;
+}
+
+#logo {
+    font-size: 25px;
+}
+
+video {
+  
+  }
+
+.hidden {
+    opacity: 0;
+}
+
+.input-field {
+    width: 25%;
+    margin: auto;
+    margin-top: 25px;
+}

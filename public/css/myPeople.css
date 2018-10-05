@@ -1,0 +1,51 @@
+.nav-wrapper {
+    background-color: rgb(69, 126, 248);
+    font-family: 'Jura', sans-serif;
+    
+}
+
+.btn waves-effect waves-light {
+    background-color: rgb(69, 126, 248);
+    
+}
+
+.bg {
+    background-image: url("/images/maps.jpg");
+    height: 100%; 
+    background-position: bottom center;  
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-attachment: fixed;
+}
+
+.row {
+    font-family: 'Jura', sans-serif;
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: rgba(255, 255, 255, 0.8);
+}   
+
+h1 {
+    font-family: 'Jura', sans-serif;
+}
+
+.btn {
+    margin-left: 10px;
+    background-color:  rgb(69, 126, 248);
+    margin-bottom: 10px;
+}
+
+.searchMenu {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#logo {
+    font-size: 25px;
+}
+
+.edit {
+    margin-top: 10px;
+}
